@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rix Printing - خزمەتگوزاری چاپەمەنی</title>
+    <meta name="description" content="چاپخانەی ڕیکس بۆ چاپەمەنی گشتی - خزمەتگوزاری چاپی کوالێتی بەرز لە هەرێمی کوردستان">
+    <meta property="og:title" content="Rix Printing - خزمەتگوزاری چاپەمەنی">
+    <meta property="og:description" content="چاپخانەی ڕیکس بۆ چاپەمەنی گشتی - خزمەتگوزاری چاپی کوالێتی بەرز لە هەرێمی کوردستان">
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6DQ8.../s320/rix%20logo.png">
+    <meta property="og:url" content="https://rixprinting.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+        }
+        
+        .font-kurdish { font-family: 'Noto Kufi Arabic', sans-serif; }
+        .font-english { font-family: 'Noto Sans', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* RTL Specific Styles */
+        .rtl .text-right { text-align: right !important; }
+        .rtl .text-left { text-align: left !important; }
+        .rtl .mr-4 { margin-left: 1rem !important; margin-right: 0 !important; }
+        .rtl .ml-4 { margin-right: 1rem !important; margin-left: 0 !important; }
+        .rtl .pr-4 { padding-left: 1rem !important; padding-right: 0 !important; }
+        .rtl .pl-4 { padding-right: 1rem !important; padding-left: 0 !important; }
+        
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .language-dropdown {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            min-width: 120px;
+        }
+        
+        .language-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .language-option:hover {
+            background: #f3f4f6;
+        }
+        
+        .language-option.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 15px;
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="font-kurdish rtl bg-gray-50">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <div class="relative">
+            <button id="langToggle" class="bg-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2 font-medium">
+                <i class="fas fa-globe"></i>
+                <span id="currentLang">کوردی</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div id="langDropdown" class="language-dropdown absolute top-full mt-2 hidden">
+                <div class="language-option active" data-lang="ckb">کوردی</div>
+                <div class="language-option" data-lang="ar">العربية</div>
+                <div class="language-option" data-lang="en">English</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6DQ8.../s320/rix%20logo.png" alt="Rix Printing Logo" class="h-10 w-auto">
+                    <span class="ml-3 text-xl font-bold text-gray-900">Rix Printing</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-services">خزمەتگوزارییەکان</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-about">دەربارەی ئێمە</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-contact">پەیوەندی</a>
+                    <a href="#blog" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-blog">بلاگ</a>
+                    <a href="https://api.whatsapp.com/send/?phone=9647504222282" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span data-key="nav-whatsapp">واتساپ</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-40">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-xl font-bold text-gray-900">Rix Printing</span>
+                    <button id="closeMobileMenu" class="text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <a href="#services" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-services">خزمەتگوزارییەکان</a>
+                    <a href="#about" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-about">دەربارەی ئێمە</a>
+                    <a href="#contact" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-contact">پەیوەندی</a>
+                    <a href="#blog" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-blog">بلاگ</a>
+                    <a href="https://api.whatsapp.com/send/?phone=9647504222282" class="block bg-green-500 text-white px-4 py-2 rounded-lg text-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span data-key="nav-whatsapp">واتساپ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight" data-key="hero-title">
+                        چاپخانەی ریکس بۆ چاپەمەنی گشتی
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed" data-key="hero-subtitle">
+                        ئێمە یارمەتی براندەکان دەدەین بۆ دروستکردنی چاپی جیاواز و سەرنجڕاکێش.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                            <i class="fas fa-shield-alt text-2xl mr-3"></i>
+                            <span class="font-semibold" data-key="hero-trust">متمانە</span>
+                        </div>
+                        <div class="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                            <i class="fas fa-award text-2xl mr-3"></i>
+                            <span class="font-semibold" data-key="hero-quality">کواڵیتی</span>
+                        </div>
+                        <div class="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                            <i class="fas fa-bolt text-2xl mr-3"></i>
+                            <span class="font-semibold" data-key="hero-speed">خێرایی</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-block bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors" data-key="hero-cta">
+                        دەستپێبکە
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="floating-animation">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj73Meo.../s600/1111%D8%AB.jpg" alt="Printing Services" class="rounded-lg shadow-2xl w-full h-96 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-key="services-title">خزمەتگوزارییەکانمان</h2>
+                <p class="text-xl text-gray-600" data-key="services-subtitle">چاپخانەی ڕیکس ئەم خزمەتگوزارییانە پێشکەش دەکات</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Printing Types -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-print text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-key="printing-types">جۆرەکانی چاپکردن</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li data-key="offset-printing">• چاپی ئۆفسێت</li>
+                        <li data-key="digital-printing">• چاپی دیجیتال</li>
+                        <li data-key="embossing">• حەرف بارز</li>
+                        <li data-key="uv-dtf">• UV DTF چاپی</li>
+                        <li data-key="dtf-printing">• DTF چاپی</li>
+                        <li data-key="tampo-printing">• چاپی تامپۆ</li>
+                        <li data-key="laser-printing">• چاپی لێزەر</li>
+                        <li data-key="thermal-printing">• چاپی حەراری</li>
+                        <li data-key="screen-printing">• چاپی سکڕین</li>
+                        <li data-key="drum-printing">• چاپی دروومان</li>
+                    </ul>
+                </div>
+                
+                <!-- Poster & Banner Printing -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-image text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-key="poster-printing">چاپکردنی پۆستەر و بانەر</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li data-key="design-print">• دیزاین و چاپ</li>
+                        <li data-key="large-format">• چاپکردنی قەبارە گەورە</li>
+                        <li data-key="high-quality">• کوالێتی بەرز</li>
+                    </ul>
+                </div>
+                
+                <!-- Book & Magazine Printing -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-book text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-key="book-printing">چاپکردنی کتێب و گۆڤار</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li data-key="various-designs">• دیزاین و قەبارەی جیاواز</li>
+                        <li data-key="cover-printing">• چاپکردنی ناوەوە و بەرگ</li>
+                    </ul>
+                </div>
+                
+                <!-- Business Cards & Invitations -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-id-card text-4xl text-red-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-key="card-printing">چاپکردنی کارتی بانگهێشت و بزنس</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li data-key="custom-design">• دیزاینی تایبەت</li>
+                        <li data-key="precise-cutting">• بڕینی ورد</li>
+                    </ul>
+                </div>
+                
+                <!-- Clothing Printing -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-tshirt text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-key="clothing-printing">چاپکردنی جل و بەرگ</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li data-key="direct-printing">• دروومان و چاپکردنی ڕاستەوخۆ</li>
+                        <li data-key="color-variety">• ڕەنگ و دیزاینی جیاواز</li>
+                    </ul>
+                </div>
+                
+                <!-- Custom Packaging -->
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-box text-4xl text-yellow-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-key="custom-packaging">چاپکردنی کارتۆنی تایبەت</h3>
+                    </div>
+                    <p class="text-gray-600" data-key="packaging-desc">چاپخانەی ڕیکس ڕێگەت پێدەدات چاپکراوی تایبەت بە براندەکەت دیزاین بکەیت و چاپی بکەیت.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Printing Process -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-key="process-title">Your Custom Printing</h2>
+                <p class="text-xl text-gray-600" data-key="process-subtitle">لە Rix Printing، ئێمە بژاردەی چاپکردنی زۆر بە کوالێتی بەرز پێشکەش دەکەین.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-key="process-step1-title">قۆناغی یەکەم: دیزاین و چاپکردن</h3>
+                    <p class="text-gray-600" data-key="process-step1-desc">هەڵبژاردنی جۆری دیزاین و ماددەکان بۆ چاپکراوی دیاریکراو.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-key="process-step2-title">قۆناغی دووەم: نموونە و پەسەندکردن</h3>
+                    <p class="text-gray-600" data-key="process-step2-desc">پێشکەشکردنی نموونە بۆ پێداچوونەوە و پەسەندکردنی کۆتایی.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-yellow-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-key="process-step3-title">قۆناغی سێیەم: چاپکردن و گەیاندن</h3>
+                    <p class="text-gray-600" data-key="process-step3-desc">دەستپێکردنی پڕۆسەی چاپ و گەیاندن بە کوالێتی بەرز.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6" data-key="about-title">دەربارەی ئێمە</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed" data-key="about-desc1">
+                        ئێمە، لە چاپخانەی ڕیکس، شانازی دەکەین بە پێشکەشکردنی خزمەتگوزارییەکانی چاپ بە کڕیارە بەڕێزەکانمان.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed" data-key="about-desc2">
+                        بۆ چەندین ساڵ، پشتگیری کڕیارەکانمان کردووە لە بوارە جیاوازەکانی چاپدا، بە هەوڵدان بۆ بەکارهێنانی تەواوی تواناکانمان بۆ پێشکەشکردنی خزمەتگوزاری چاپکردنی گشتیی کوالێتی بەرز و پێشکەوتوو.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center text-blue-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span data-key="about-trust">متمانەپێکراوی</span>
+                        </div>
+                        <div class="flex items-center text-green-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span data-key="about-quality">کوالێتی</span>
+                        </div>
+                        <div class="flex items-center text-yellow-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span data-key="about-speed">خێرایی</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibm75.../s300/357%D8%B95%D8%B9.jpg" alt="About Rix Printing" class="rounded-lg shadow-2xl w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video/Learn Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6" data-key="learn-title">فێربە چۆن سەرکەوتوو بیت بە چاپکردن</h2>
+            <p class="text-xl mb-8 text-blue-100" data-key="learn-subtitle">ئێمە چارەسەری چاپکردنی داهێنەرانە پێشکەش دەکەین کە یارمەتی براندەکان دەدات سەرنجڕاکێش بن.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white/10 rounded-lg p-6">
+                    <i class="fas fa-lightbulb text-4xl mb-4 text-yellow-300"></i>
+                    <h3 class="text-xl font-bold mb-2" data-key="learn-innovation">داهێنان</h3>
+                    <p data-key="learn-innovation-desc">تەکنەلۆژیای پێشکەوتوو بۆ باشترین ئەنجام</p>
+                </div>
+                <div class="bg-white/10 rounded-lg p-6">
+                    <i class="fas fa-palette text-4xl mb-4 text-pink-300"></i>
+                    <h3 class="text-xl font-bold mb-2" data-key="learn-creativity">دەستفرۆشی</h3>
+                    <p data-key="learn-creativity-desc">دیزاینە تایبەتەکان بۆ براندەکەت</p>
+                </div>
+                <div class="bg-white/10 rounded-lg p-6">
+                    <i class="fas fa-rocket text-4xl mb-4 text-green-300"></i>
+                    <h3 class="text-xl font-bold mb-2" data-key="learn-speed">خێرایی</h3>
+                    <p data-key="learn-speed-desc">خێرایی لە چاپ و گەیاندن</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners & Customers -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-key="partners-title">هاوبەش و کڕیارەکانمان</h2>
+                <p class="text-xl text-gray-600" data-key="partners-subtitle">کڕیارەکانمان سەرچاوەی هێز و سەرکەوتنمانن</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="text-center p-4">
+                    <img src="https://via.placeholder.com/150x80/4F46E5/FFFFFF?text=Partner+1" alt="Partner 1" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="text-center p-4">
+                    <img src="https://via.placeholder.com/150x80/10B981/FFFFFF?text=Partner+2" alt="Partner 2" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="text-center p-4">
+                    <img src="https://via.placeholder.com/150x80/F59E0B/FFFFFF?text=Partner+3" alt="Partner 3" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="text-center p-4">
+                    <img src="https://via.placeholder.com/150x80/EF4444/FFFFFF?text=Partner+4" alt="Partner 4" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="text-center p-4">
+                    <img src="https://via.placeholder.com/150x80/8B5CF6/FFFFFF?text=Partner+5" alt="Partner 5" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="text-center p-4">
+                    <img src="https://via.placeholder.com/150x80/06B6D4/FFFFFF?text=Partner+6" alt="Partner 6" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-key="contact-title">پەیوەندی لەگەڵمان</h2>
+                <p class="text-xl text-gray-600" data-key="contact-subtitle">بۆ هەر پرسیارێک یان داواکارییەک پەیوەندیمان پێوە بکەن</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6" data-key="contact-form-title">فۆرمی پەیوەندی</h3>
+                    <form id="contactForm" onsubmit="sendContactEmail(event, 'ckb')">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-key="contact-name">ناوت</label>
+                            <input type="text" id="name-ckb-main" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-key="contact-phone">ژمارەی مۆبایل</label>
+                            <input type="tel" id="phone-ckb-main" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="description" class="block text-sm font-medium text-gray-700 mb-2" data-key="contact-description">وەسفێک لەسەر داواکارییەکەت</label>
+                            <textarea id="description-ckb-main" name="description" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors" data-key="contact-submit">
+                            ناردن
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info & Map -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6" data-key="contact-info-title">زانیاری پەیوەندی</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">07506151617</p>
+                                    <p class="font-semibold text-gray-900">07506121314</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900">info@rixprinting.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-900" data-key="contact-address">Bahrka - 150m overpass, Erbil, Iraq</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-instagram text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <a href="https://www.instagram.com/rix_printing/" class="font-semibold text-blue-600 hover:underline">@rix_printing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6" data-key="map-title">شوێنی چاپخانەکەمان</h3>
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.8!2d44.018319059200046!3d36.296006049345785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDE3JzQ1LjYiTiA0NMKwMDEnMDYuMCJF!5e0!3m2!1sen!2siq!4v1234567890" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0; border-radius: 8px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-key="footer-info">زانیاری</h3>
+                    <p class="text-gray-400 mb-4">Rix Printing - خزمەتگوزاری چاپەمەنی</p>
+                    <p class="text-gray-400" data-key="footer-desc">باشترین چاپخانە لە هەرێمی کوردستان</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-key="footer-contact">پەیوەندی</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p>07506151617</p>
+                        <p>07506121314</p>
+                        <p>info@rixprinting.com</p>
+                        <p data-key="footer-address">Bahrka - 150m overpass, Erbil, Iraq</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-key="footer-follow">شوێنەکانمان</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/rix_printing/" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=9647504222282" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400" data-key="footer-copyright">© 2025 Rix Printing. هەموو مافەکانی پارێزراون.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
