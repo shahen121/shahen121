@@ -121,11 +121,72 @@
             transform: translateX(0);
         }
         
+        /* Featured Designs Grid */
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .design-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+        
+        .design-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .design-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .design-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .design-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .language-switcher {
                 top: 15px;
                 left: 15px;
+            }
+            
+            .design-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            
+            .design-item {
+                padding: 1rem;
+            }
+            
+            .design-icon {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .design-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
             }
         }
     </style>
@@ -159,6 +220,7 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-services">خزمەتگوزارییەکان</a>
+                    <a href="#featured-designs" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-designs">تصاميم المميزة</a>
                     <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-about">دەربارەی ئێمە</a>
                     <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-contact">پەیوەندی</a>
                     <a href="#blog" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-key="nav-blog">بلاگ</a>
@@ -188,6 +250,7 @@
                 </div>
                 <div class="space-y-4">
                     <a href="#services" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-services">خزمەتگوزارییەکان</a>
+                    <a href="#featured-designs" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-designs">تصاميم المميزة</a>
                     <a href="#about" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-about">دەربارەی ئێمە</a>
                     <a href="#contact" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-contact">پەیوەندی</a>
                     <a href="#blog" class="block text-gray-700 hover:text-blue-600 py-2" data-key="nav-blog">بلاگ</a>
@@ -328,8 +391,223 @@
         </div>
     </section>
 
+    <!-- Featured Designs Section -->
+    <section id="featured-designs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4" data-key="design-products">تصاميم المميزة</h2>
+                <p class="text-xl text-gray-600">بەشی تایبەت بە دیزاین و بەرهەمە جیاوازەکان</p>
+            </div>
+            
+            <div class="design-grid">
+                <!-- 1. Booklets & Catalogs -->
+                <div class="design-item" onclick="scrollToSection('booklet-catalog-section')">
+                    <i class="fas fa-book-open design-icon"></i>
+                    <h3 class="design-title" data-key="booklet-catalog">بووکلیەت و کتەلۆگ</h3>
+                    <p class="design-description">دیزاین و چاپی کتێبچە و کتالۆگی تایبەت</p>
+                </div>
+                
+                <!-- 2. Brochures -->
+                <div class="design-item" onclick="scrollToSection('brochure-section')">
+                    <i class="fas fa-file-alt design-icon"></i>
+                    <h3 class="design-title" data-key="brochure">بروشور</h3>
+                    <p class="design-description">بروشوری ڕیکلامی بە دیزاینی نوێ</p>
+                </div>
+                
+                <!-- 3. Business Cards -->
+                <div class="design-item" onclick="scrollToSection('business-card-section')">
+                    <i class="fas fa-id-card design-icon"></i>
+                    <h3 class="design-title" data-key="business-card">کارتێکی کاروبار</h3>
+                    <p class="design-description">کارتی کاروباری کراوەسازکراو</p>
+                </div>
+                
+                <!-- 4. Calendars -->
+                <div class="design-item" onclick="scrollToSection('calendars-section')">
+                    <i class="fas fa-calendar-alt design-icon"></i>
+                    <h3 class="design-title" data-key="calendars">ساڵنامەکان</h3>
+                    <p class="design-description">ساڵنامەی دیواری و مێزی تایبەت</p>
+                </div>
+                
+                <!-- 5. Car Stickers -->
+                <div class="design-item" onclick="scrollToSection('car-stickers-section')">
+                    <i class="fas fa-car design-icon"></i>
+                    <h3 class="design-title" data-key="car-stickers">ستیكەرەکانی ئۆتۆمبێل</h3>
+                    <p class="design-description">ستیکەری ئۆتۆمبێل و شاشە</p>
+                </div>
+                
+                <!-- 6. Carbon Forms -->
+                <div class="design-item" onclick="scrollToSection('carbon-forms-section')">
+                    <i class="fas fa-copy design-icon"></i>
+                    <h3 class="design-title" data-key="carbon-forms">فۆڕمەکانی کاربۆن‌نەبۆ</h3>
+                    <p class="design-description">فۆرمە کاربۆنە نەبۆکان</p>
+                </div>
+                
+                <!-- 7. Clocks -->
+                <div class="design-item" onclick="scrollToSection('clocks-section')">
+                    <i class="fas fa-clock design-icon"></i>
+                    <h3 class="design-title" data-key="clocks">کاتژمێر</h3>
+                    <p class="design-description">کاتژمێری دیواری و مێزی ڕیکلامی</p>
+                </div>
+                
+                <!-- 8. Clothing & Accessories -->
+                <div class="design-item" onclick="scrollToSection('clothing-accessories-section')">
+                    <i class="fas fa-tshirt design-icon"></i>
+                    <h3 class="design-title" data-key="clothing-accessories">جل و جەمدان</h3>
+                    <p class="design-description">جل و بەرگ و جەمدانە ڕیکلامیەکان</p>
+                </div>
+                
+                <!-- 9. Custom Pens -->
+                <div class="design-item" onclick="scrollToSection('custom-pens-section')">
+                    <i class="fas fa-pen design-icon"></i>
+                    <h3 class="design-title" data-key="custom-pens">قەڵەمەکان کراوەسازکراو</h3>
+                    <p class="design-description">قەڵەمە کراوەسازکراو و تایبەتەکان</p>
+                </div>
+                
+                <!-- 10. Desk Sets -->
+                <div class="design-item" onclick="scrollToSection('desk-sets-section')">
+                    <i class="fas fa-desktop design-icon"></i>
+                    <h3 class="design-title" data-key="desk-sets">کۆمەڵەکانی سەریسێخ</h3>
+                    <p class="design-description">کۆمەڵەی میزی کار و سەرسێخ</p>
+                </div>
+                
+                <!-- 11. Gift Baskets -->
+                <div class="design-item" onclick="scrollToSection('gift-baskets-section')">
+                    <i class="fas fa-gift design-icon"></i>
+                    <h3 class="design-title" data-key="gift-baskets">دۆرهەنگەر</h3>
+                    <p class="design-description">دۆرهەنگەری هەنگاو و بەرهەمە تایبەتەکان</p>
+                </div>
+                
+                <!-- 12. Envelopes -->
+                <div class="design-item" onclick="scrollToSection('envelopes-section')">
+                    <i class="fas fa-envelope-open design-icon"></i>
+                    <h3 class="design-title" data-key="envelopes">پاکەتنامە / ئەنوێلۆپ</h3>
+                    <p class="design-description">پاکەتنامەی تایبەت بە براند</p>
+                </div>
+                
+                <!-- 13. Flags -->
+                <div class="design-item" onclick="scrollToSection('flags-section')">
+                    <i class="fas fa-flag design-icon"></i>
+                    <h3 class="design-title" data-key="flags">ئالا</h3>
+                    <p class="design-description">ئالا و بانەری ڕیکلامی</p>
+                </div>
+                
+                <!-- 14. Flyers -->
+                <div class="design-item" onclick="scrollToSection('flyers-section')">
+                    <i class="fas fa-paper-plane design-icon"></i>
+                    <h3 class="design-title" data-key="flyers">فڵایەر</h3>
+                    <p class="design-description">فڵایەری ڕیکلامی بە کوالێتی بەرز</p>
+                </div>
+                
+                <!-- 15. Folders -->
+                <div class="design-item" onclick="scrollToSection('folders-section')">
+                    <i class="fas fa-folder design-icon"></i>
+                    <h3 class="design-title" data-key="folders">فۆڵدەر</h3>
+                    <p class="design-description">فۆڵدەری بەڕگ و بە تایبەت</p>
+                </div>
+                
+                <!-- 16. Keychains -->
+                <div class="design-item" onclick="scrollToSection('keychains-section')">
+                    <i class="fas fa-key design-icon"></i>
+                    <h3 class="design-title" data-key="keychains">کلیلەکان/چاویلیکان</h3>
+                    <p class="design-description">بەرهەمە ھەڵبژاردەی ڕیکلامی</p>
+                </div>
+                
+                <!-- 17. Labels & Stickers -->
+                <div class="design-item" onclick="scrollToSection('labels-stickers-section')">
+                    <i class="fas fa-tag design-icon"></i>
+                    <h3 class="design-title" data-key="labels-stickers">لێیبڵ و ستیكەر</h3>
+                    <p class="design-description">لێیبڵ و ستیكەری جۆراو جۆر</p>
+                </div>
+                
+                <!-- 18. Letterheads -->
+                <div class="design-item" onclick="scrollToSection('letterheads-section')">
+                    <i class="fas fa-file design-icon"></i>
+                    <h3 class="design-title" data-key="letterheads">سەرنامە</h3>
+                    <p class="design-description">سەرنامەی فەرمی و تایبەت</p>
+                </div>
+                
+                <!-- 19. Notepads -->
+                <div class="design-item" onclick="scrollToSection('notepads-section')">
+                    <i class="fas fa-sticky-note design-icon"></i>
+                    <h3 class="design-title" data-key="notepads">نۆتبڵۆک</h3>
+                    <p class="design-description">نۆتبڵۆک و دفاترە بچووکەکان</p>
+                </div>
+                
+                <!-- 20. Notebooks -->
+                <div class="design-item" onclick="scrollToSection('notebooks-section')">
+                    <i class="fas fa-book design-icon"></i>
+                    <h3 class="design-title" data-key="notebooks">نوتبووک</h3>
+                    <p class="design-description">نوتبووکی کوردی و ئینگلیزی</p>
+                </div>
+                
+                <!-- 21. Small Notepads -->
+                <div class="design-item" onclick="scrollToSection('notepads-small-section')">
+                    <i class="fas fa-sticky-note design-icon"></i>
+                    <h3 class="design-title" data-key="notepads-small">نوتپاد</h3>
+                    <p class="design-description">نوتپادی بچووک و گەورە</p>
+                </div>
+                
+                <!-- 22. Our Services -->
+                <div class="design-item" onclick="scrollToSection('services-section')">
+                    <i class="fas fa-cogs design-icon"></i>
+                    <h3 class="design-title" data-key="services-title">خزمەتگوزاریەکانمان</h3>
+                    <p class="design-description">هەموو خزمەتگوزارییە چاپکردنەکان</p>
+                </div>
+                
+                <!-- 23. Advertising Food Products -->
+                <div class="design-item" onclick="scrollToSection('food-products-section')">
+                    <i class="fas fa-utensils design-icon"></i>
+                    <h3 class="design-title" data-key="food-products">بەرهەمە خواردنەوەیی ڕیکلامی</h3>
+                    <p class="design-description">بەرهەمە خواردنەوەیی ڕیکلامی</p>
+                </div>
+                
+                <!-- 24. Advertising Gift Items -->
+                <div class="design-item" onclick="scrollToSection('gift-items-section')">
+                    <i class="fas fa-gift design-icon"></i>
+                    <h3 class="design-title" data-key="gift-items">دۆرەفەری ڕیکلامی</h3>
+                    <p class="design-description">دۆرەفەری ڕیکلامی و هەنگاو</p>
+                </div>
+                
+                <!-- 25. Advertising Products -->
+                <div class="design-item" onclick="scrollToSection('advertising-products-section')">
+                    <i class="fas fa-bullhorn design-icon"></i>
+                    <h3 class="design-title" data-key="advertising-products">بەرهەمە ڕیکلامیەکان</h3>
+                    <p class="design-description">هەموو بەرهەمە ڕیکلامیەکان</p>
+                </div>
+                
+                <!-- 26. Advertising Technology -->
+                <div class="design-item" onclick="scrollToSection('advertising-technology-section')">
+                    <i class="fas fa-microchip design-icon"></i>
+                    <h3 class="design-title" data-key="advertising-technology">تەکنەلۆژیای ڕیکلامی</h3>
+                    <p class="design-description">تەکنەلۆژیای نوێ بۆ ڕیکلام</p>
+                </div>
+                
+                <!-- 27. Safety Items -->
+                <div class="design-item" onclick="scrollToSection('safety-items-section')">
+                    <i class="fas fa-hard-hat design-icon"></i>
+                    <h3 class="design-title" data-key="safety-items">کێشەکانی سەلامەتی</h3>
+                    <p class="design-description">کێش و بەرهەمە سەلامەتیەکان</p>
+                </div>
+                
+                <!-- 28. Signs & Banners -->
+                <div class="design-item" onclick="scrollToSection('signs-banners-section')">
+                    <i class="fas fa-flag design-icon"></i>
+                    <h3 class="design-title" data-key="signs-banners">نیشانە و بانەر</h3>
+                    <p class="design-description">نیشانە و بانەری گەورە</p>
+                </div>
+                
+                <!-- 29. Flyers D -->
+                <div class="design-item" onclick="scrollToSection('flyers-d-section')">
+                    <i class="fas fa-file-pdf design-icon"></i>
+                    <h3 class="design-title" data-key="flyers-d">فڵایەر د</h3>
+                    <p class="design-description">فڵایەری دیجیتاڵی و چاپکراو</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Custom Printing Process -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4" data-key="process-title">Your Custom Printing</h2>
@@ -359,7 +637,7 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -570,5 +848,29 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Function to scroll to specific sections
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        // Add click handlers for design items
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create sections for each design item if they don't exist
+            const designItems = document.querySelectorAll('.design-item');
+            designItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    const title = this.querySelector('.design-title').textContent;
+                    showNotification(`بە دیاری کراوە: ${title}`, 'info');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

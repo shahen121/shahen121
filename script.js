@@ -4,6 +4,7 @@
 const translations = {
     ckb: {
         'nav-services': 'خزمەتگوزارییەکان',
+        'nav-designs': 'تصاميم المميزة',
         'nav-about': 'دەربارەی ئێمە',
         'nav-contact': 'پەیوەندی',
         'nav-blog': 'بلاگ',
@@ -42,6 +43,36 @@ const translations = {
         'color-variety': '• ڕەنگ و دیزاینی جیاواز',
         'custom-packaging': 'چاپکردنی کارتۆنی تایبەت',
         'packaging-desc': 'چاپخانەی ڕیکس ڕێگەت پێدەدات چاپکراوی تایبەت بە براندەکەت دیزاین بکەیت و چاپی بکەیت.',
+        'design-products': 'تصاميم المميزة',
+        'booklet-catalog': 'بووکلیەت و کتەلۆگ',
+        'brochure': 'بروشور',
+        'business-card': 'کارتێکی کاروبار',
+        'calendars': 'ساڵنامەکان',
+        'car-stickers': 'ستیكەرەکانی ئۆتۆمبێل',
+        'carbon-forms': 'فۆڕمەکانی کاربۆن‌نەبۆ',
+        'clocks': 'کاتژمێر',
+        'clothing-accessories': 'جل و جەمدان',
+        'custom-pens': 'قەڵەمەکان کراوەسازکراو',
+        'desk-sets': 'کۆمەڵەکانی سەریسێخ',
+        'gift-baskets': 'دۆرهەنگەر',
+        'envelopes': 'پاکەتنامە / ئەنوێلۆپ',
+        'flags': 'ئالا',
+        'flyers': 'فڵایەر',
+        'folders': 'فۆڵدەر',
+        'keychains': 'کلیلەکان/چاویلیکان',
+        'labels-stickers': 'لێیبڵ و ستیكەر',
+        'letterheads': 'سەرنامە',
+        'notepads': 'نۆتبڵۆک',
+        'notebooks': 'نوتبووک',
+        'notepads-small': 'نوتپاد',
+        'services-title': 'خزمەتگوزاریەکانمان',
+        'food-products': 'بەرهەمە خواردنەوەیی ڕیکلامی',
+        'gift-items': 'دۆرەفەری ڕیکلامی',
+        'advertising-products': 'بەرهەمە ڕیکلامیەکان',
+        'advertising-technology': 'تەکنەلۆژیای ڕیکلامی',
+        'safety-items': 'کێشەکانی سەلامەتی',
+        'signs-banners': 'نیشانە و بانەر',
+        'flyers-d': 'فڵایەر د',
         'process-title': 'Your Custom Printing',
         'process-subtitle': 'لە Rix Printing، ئێمە بژاردەی چاپکردنی زۆر بە کوالێتی بەرز پێشکەش دەکەین.',
         'process-step1-title': 'قۆناغی یەکەم: دیزاین و چاپکردن',
@@ -85,6 +116,7 @@ const translations = {
     },
     ar: {
         'nav-services': 'خدماتنا',
+        'nav-designs': 'تصاميم المميزة',
         'nav-about': 'من نحن',
         'nav-contact': 'اتصل بنا',
         'nav-blog': 'المدونة',
@@ -123,6 +155,36 @@ const translations = {
         'color-variety': '• ألوان وتصاميم متنوعة',
         'custom-packaging': 'طباعة كرتون مخصص',
         'packaging-desc': 'مطبعة ريكس تتيح لك تصميم وطباعة منتجات مخصصة لعلامتك التجارية.',
+        'design-products': 'تصاميم المميزة',
+        'booklet-catalog': 'كتيبات وكتالوجات',
+        'brochure': 'بروشورات',
+        'business-card': 'بطاقات العمل',
+        'calendars': 'تقاويم',
+        'car-stickers': 'ملصقات السيارات',
+        'carbon-forms': 'نماذج الكربون',
+        'clocks': 'ساعات',
+        'clothing-accessories': 'ملابس وإكسسوارات',
+        'custom-pens': 'أقلام مخصصة',
+        'desk-sets': 'مجموعات المكتب',
+        'gift-baskets': 'سلال هدايا',
+        'envelopes': 'ظروف',
+        'flags': 'أعلام',
+        'flyers': 'منشورات',
+        'folders': 'مجلدات',
+        'keychains': 'سلاسل مفاتيح',
+        'labels-stickers': 'ملصقات وستيكرات',
+        'letterheads': 'رؤوساءاءات',
+        'notepads': 'دفاتر ملاحظات',
+        'notebooks': 'كراسات',
+        'notepads-small': 'دفاتر صغيرة',
+        'services-title': 'خدماتنا',
+        'food-products': 'منتجات غذائية إعلانية',
+        'gift-items': 'هدايا إعلانية',
+        'advertising-products': 'منتجات إعلانية',
+        'advertising-technology': 'تكنولوجيا إعلانية',
+        'safety-items': 'عناصر سلامة',
+        'signs-banners': 'لافتات وبنرات',
+        'flyers-d': 'منشورات د',
         'process-title': 'طباعتك المخصصة',
         'process-subtitle': 'في ريكس برنتينغ، نقدم خدمات طباعة عالية الجودة.',
         'process-step1-title': 'الخطوة الأولى: التصميم والطباعة',
@@ -166,6 +228,7 @@ const translations = {
     },
     en: {
         'nav-services': 'Services',
+        'nav-designs': 'Featured Designs',
         'nav-about': 'About Us',
         'nav-contact': 'Contact',
         'nav-blog': 'Blog',
@@ -204,6 +267,36 @@ const translations = {
         'color-variety': '• Various Colors & Designs',
         'custom-packaging': 'Custom Packaging Printing',
         'packaging-desc': 'Rix Printing allows you to design and print custom products for your brand.',
+        'design-products': 'Featured Designs',
+        'booklet-catalog': 'Booklets & Catalogs',
+        'brochure': 'Brochures',
+        'business-card': 'Business Cards',
+        'calendars': 'Calendars',
+        'car-stickers': 'Car Stickers',
+        'carbon-forms': 'Carbon Forms',
+        'clocks': 'Clocks',
+        'clothing-accessories': 'Clothing & Accessories',
+        'custom-pens': 'Custom Pens',
+        'desk-sets': 'Desk Sets',
+        'gift-baskets': 'Gift Baskets',
+        'envelopes': 'Envelopes',
+        'flags': 'Flags',
+        'flyers': 'Flyers',
+        'folders': 'Folders',
+        'keychains': 'Keychains',
+        'labels-stickers': 'Labels & Stickers',
+        'letterheads': 'Letterheads',
+        'notepads': 'Notepads',
+        'notebooks': 'Notebooks',
+        'notepads-small': 'Small Notepads',
+        'services-title': 'Our Services',
+        'food-products': 'Advertising Food Products',
+        'gift-items': 'Advertising Gift Items',
+        'advertising-products': 'Advertising Products',
+        'advertising-technology': 'Advertising Technology',
+        'safety-items': 'Safety Items',
+        'signs-banners': 'Signs & Banners',
+        'flyers-d': 'Flyers D',
         'process-title': 'Your Custom Printing',
         'process-subtitle': 'At Rix Printing, we offer high-quality printing options.',
         'process-step1-title': 'Step 1: Design & Print',
@@ -274,6 +367,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize animations
     initAnimations();
+    
+    // Initialize featured designs
+    initFeaturedDesigns();
 });
 
 // Language switching functionality
@@ -531,11 +627,42 @@ function initAnimations() {
     }, observerOptions);
     
     // Observe elements for animation
-    document.querySelectorAll('.card-hover, section h2, section p').forEach(el => {
+    document.querySelectorAll('.card-hover, .design-item, section h2, section p').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+}
+
+// Initialize featured designs
+function initFeaturedDesigns() {
+    const designItems = document.querySelectorAll('.design-item');
+    
+    designItems.forEach((item, index) => {
+        // Add click handler for each design item
+        item.addEventListener('click', function() {
+            const title = this.querySelector('.design-title').textContent;
+            const description = this.querySelector('.design-description').textContent;
+            
+            // Show notification with product info
+            showNotification(`بە دیاری کراوە: ${title} - ${description}`, 'info');
+            
+            // Add visual feedback
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+        
+        // Add keyboard navigation
+        item.setAttribute('tabindex', '0');
+        item.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
     });
 }
 
@@ -582,6 +709,20 @@ window.addEventListener('scroll', debounce(() => {
 // Add scroll effect to navbar
 const navbar = document.querySelector('nav');
 navbar.style.transition = 'transform 0.3s ease';
+
+// Function to scroll to specific sections (used by design items)
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    } else {
+        // If section doesn't exist, show a message
+        showNotification('ئەم بەشە بەردەست نییە لە ئێستادا', 'info');
+    }
+}
 
 // Preload images for better performance
 function preloadImages() {
