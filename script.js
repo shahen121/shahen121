@@ -3,16 +3,23 @@
 // Language translations
 const translations = {
     ckb: {
-        'nav-services': 'خزمەتگوزارییەکان',
-        'nav-designs': 'تصاميم المميزة',
-        'nav-about': 'دەربارەی ئێمە',
-        'nav-contact': 'پەیوەندی',
-        'nav-blog': 'بلاگ',
-        'nav-whatsapp': 'واتساپ',
+        'mobile-nav-services': 'خزمەتگوزارییەکان',
+        'mobile-nav-designs': 'دیزاین و بەرهەمە جیاوازەکان',
+        'mobile-nav-about': 'دەربارەی ئێمە',
+        'mobile-nav-partners': 'هاوبەش و کڕیارەکانمان',
+        'mobile-nav-contact': 'پەیوەندی',
+        'mobile-nav-blog': 'بلاگ',
+        'mobile-nav-whatsapp': 'واتساپ',
+        'desktop-nav-services': 'خزمەتگوزارییەکان',
+        'desktop-nav-designs': 'دیزاینەکان',
+        'desktop-nav-about': 'دەربارەی ئێمە',
+        'desktop-nav-partners': 'هاوبەش و کڕیارەکانمان',
+        'desktop-nav-contact': 'پەیوەندی',
+        'desktop-nav-blog': 'بلاگ',
         'hero-title': 'چاپخانەی ریکس بۆ چاپەمەنی گشتی',
         'hero-subtitle': 'ئێمە یارمەتی براندەکان دەدەین بۆ دروستکردنی چاپی جیاواز و سەرنجڕاکێش.',
         'hero-trust': 'متمانە',
-        'hero-quality': 'کواڵیتی',
+        'hero-quality': 'کوالێتی',
         'hero-speed': 'خێرایی',
         'hero-cta': 'دەستپێبکە',
         'services-title': 'خزمەتگوزارییەکانمان',
@@ -43,87 +50,142 @@ const translations = {
         'color-variety': '• ڕەنگ و دیزاینی جیاواز',
         'custom-packaging': 'چاپکردنی کارتۆنی تایبەت',
         'packaging-desc': 'چاپخانەی ڕیکس ڕێگەت پێدەدات چاپکراوی تایبەت بە براندەکەت دیزاین بکەیت و چاپی بکەیت.',
-        'design-products': 'تصاميم المميزة',
-        'booklet-catalog': 'بووکلیەت و کتەلۆگ',
-        'brochure': 'بروشور',
-        'business-card': 'کارتێکی کاروبار',
-        'calendars': 'ساڵنامەکان',
-        'car-stickers': 'ستیكەرەکانی ئۆتۆمبێل',
-        'carbon-forms': 'فۆڕمەکانی کاربۆن‌نەبۆ',
-        'clocks': 'کاتژمێر',
-        'clothing-accessories': 'جل و جەمدان',
-        'custom-pens': 'قەڵەمەکان کراوەسازکراو',
-        'desk-sets': 'کۆمەڵەکانی سەریسێخ',
-        'gift-baskets': 'دۆرهەنگەر',
-        'envelopes': 'پاکەتنامە / ئەنوێلۆپ',
-        'flags': 'ئالا',
-        'flyers': 'فڵایەر',
-        'folders': 'فۆڵدەر',
-        'keychains': 'کلیلەکان/چاویلیکان',
-        'labels-stickers': 'لێیبڵ و ستیكەر',
-        'letterheads': 'سەرنامە',
-        'notepads': 'نۆتبڵۆک',
-        'notebooks': 'نوتبووک',
-        'notepads-small': 'نوتپاد',
-        'services-title': 'خزمەتگوزاریەکانمان',
-        'food-products': 'بەرهەمە خواردنەوەیی ڕیکلامی',
-        'gift-items': 'دۆرەفەری ڕیکلامی',
-        'advertising-products': 'بەرهەمە ڕیکلامیەکان',
-        'advertising-technology': 'تەکنەلۆژیای ڕیکلامی',
-        'safety-items': 'کێشەکانی سەلامەتی',
-        'signs-banners': 'نیشانە و بانەر',
-        'flyers-d': 'فڵایەر د',
-        'process-title': 'Your Custom Printing',
-        'process-subtitle': 'لە Rix Printing، ئێمە بژاردەی چاپکردنی زۆر بە کوالێتی بەرز پێشکەش دەکەین.',
-        'process-step1-title': 'قۆناغی یەکەم: دیزاین و چاپکردن',
-        'process-step1-desc': 'هەڵبژاردنی جۆری دیزاین و ماددەکان بۆ چاپکراوی دیاریکراو.',
-        'process-step2-title': 'قۆناغی دووەم: نموونە و پەسەندکردن',
-        'process-step2-desc': 'پێشکەشکردنی نموونە بۆ پێداچوونەوە و پەسەندکردنی کۆتایی.',
-        'process-step3-title': 'قۆناغی سێیەم: چاپکردن و گەیاندن',
-        'process-step3-desc': 'دەستپێکردنی پڕۆسەی چاپ و گەیاندن بە کوالێتی بەرز.',
+        'designs-title': 'دیزاین و بەرهەمە جیاوازەکان',
+        'designs-subtitle': 'بەشی تایبەت بە دیزاین و بەرهەمە جیاوازەکان',
+        'designs-booklets': 'Booklets & Catalogs',
+        'designs-booklets-desc': 'دیزاین و چاپی کتێبچە و کتالۆگی تایبەت',
+        'designs-brochures': 'Brochures',
+        'designs-brochures-desc': 'بروشوری ڕیکلامی بە دیزاینی نوێ',
+        'designs-business-cards': 'Business Cards',
+        'designs-business-cards-desc': 'کارتی کاروباری کراوەسازکراو',
+        'designs-calendars': 'Calendars',
+        'designs-calendars-desc': 'ساڵنامەی دیواری و مێزی تایبەت',
+        'designs-car-stickers': 'Car Stickers',
+        'designs-car-stickers-desc': 'ستیکەری ئۆتۆمبێل و شاشە',
+        'designs-carbon-forms': 'Carbon Forms',
+        'designs-carbon-forms-desc': 'فۆرمە کاربۆنە نەبۆکان',
+        'designs-clocks': 'Clocks',
+        'designs-clocks-desc': 'کاتژمێری دیواری و مێزی ڕیکلامی',
+        'designs-clothing': 'Clothing & Accessories',
+        'designs-clothing-desc': 'جل و بەرگ و جەمدانە ڕیکلامیەکان',
+        'designs-pens': 'Custom Pens',
+        'designs-pens-desc': 'قەڵەمە کراوەسازکراو و تایبەتەکان',
+        'designs-desk-sets': 'Desk Sets',
+        'designs-desk-sets-desc': 'کۆمەڵەی میزی کار و سەرسێخ',
+        'designs-gift-baskets': 'Gift Baskets',
+        'designs-gift-baskets-desc': 'دۆرهەنگەری هەنگاو و بەرهەمە تایبەتەکان',
+        'designs-envelopes': 'Envelopes',
+        'designs-envelopes-desc': 'پاکەتنامەی تایبەت بە براند',
+        'designs-flags': 'Flags',
+        'designs-flags-desc': 'ئالا و بانەری ڕیکلامی',
+        'designs-flyers': 'Flyers',
+        'designs-flyers-desc': 'فڵایەری ڕیکلامی بە کوالێتی بەرز',
+        'designs-folders': 'Folders',
+        'designs-folders-desc': 'فۆڵدەری بەڕگ و بە تایبەت',
+        'designs-keychains': 'Keychains',
+        'designs-keychains-desc': 'بەرهەمە ھەڵبژاردەی ڕیکلامی',
+        'designs-labels': 'Labels & Stickers',
+        'designs-labels-desc': 'لێیبڵ و ستیكەری جۆراو جۆر',
+        'designs-letterheads': 'Letterheads',
+        'designs-letterheads-desc': 'سەرنامەی فەرمی و تایبەت',
+        'designs-notepads': 'Notepads',
+        'designs-notepads-desc': 'نۆتبڵۆک و دفاترە بچووکەکان',
+        'designs-notebooks': 'Notebooks',
+        'designs-notebooks-desc': 'نوتبووکی کوردی و ئینگلیزی',
+        'designs-small-notepads': 'Small Notepads',
+        'designs-small-notepads-desc': 'نوتپادی بچووک و گەورە',
+        'designs-our-services': 'Our Services',
+        'designs-our-services-desc': 'هەموو خزمەتگوزارییە چاپکردنەکان',
+        'designs-food-products': 'Advertising Food Products',
+        'designs-food-products-desc': 'بەرهەمە خواردنەوەیی ڕیکلامی',
+        'designs-gift-items': 'Advertising Gift Items',
+        'designs-gift-items-desc': 'دۆرەفەری ڕیکلامی و هەنگاو',
+        'designs-advertising-products': 'Advertising Products',
+        'designs-advertising-products-desc': 'هەموو بەرهەمە ڕیکلامیەکان',
+        'designs-technology': 'Advertising Technology',
+        'designs-technology-desc': 'تەکنەلۆژیای نوێ بۆ ڕیکلام',
+        'designs-safety-items': 'Safety Items',
+        'designs-safety-items-desc': 'کێش و بەرهەمە سەلامەتیەکان',
+        'designs-signs-banners': 'Signs & Banners',
+        'designs-signs-banners-desc': 'نیشانە و بانەری گەورە',
+        'designs-flyers-d': 'Flyers D',
+        'designs-flyers-d-desc': 'فڵایەری دیجیتاڵی و چاپکراو',
         'about-title': 'دەربارەی ئێمە',
         'about-desc1': 'ئێمە، لە چاپخانەی ڕیکس، شانازی دەکەین بە پێشکەشکردنی خزمەتگوزارییەکانی چاپ بە کڕیارە بەڕێزەکانمان.',
         'about-desc2': 'بۆ چەندین ساڵ، پشتگیری کڕیارەکانمان کردووە لە بوارە جیاوازەکانی چاپدا، بە هەوڵدان بۆ بەکارهێنانی تەواوی تواناکانمان بۆ پێشکەشکردنی خزمەتگوزاری چاپکردنی گشتیی کوالێتی بەرز و پێشکەوتوو.',
         'about-trust': 'متمانەپێکراوی',
         'about-quality': 'کوالێتی',
         'about-speed': 'خێرایی',
-        'learn-title': 'فێربە چۆن سەرکەوتوو بیت بە چاپکردن',
-        'learn-subtitle': 'ئێمە چارەسەری چاپکردنی داهێنەرانە پێشکەش دەکەین کە یارمەتی براندەکان دەدات سەرنجڕاکێش بن.',
-        'learn-innovation': 'داهێنان',
-        'learn-innovation-desc': 'تەکنەلۆژیای پێشکەوتوو بۆ باشترین ئەنجام',
-        'learn-creativity': 'دەستفرۆشی',
-        'learn-creativity-desc': 'دیزاینە تایبەتەکان بۆ براندەکەت',
-        'learn-speed': 'خێرایی',
-        'learn-speed-desc': 'خێرایی لە چاپ و گەیاندن',
         'partners-title': 'هاوبەش و کڕیارەکانمان',
         'partners-subtitle': 'کڕیارەکانمان سەرچاوەی هێز و سەرکەوتنمانن',
+        'partner-1': 'شركة ريكس للطباعة',
+        'partner-1-desc': 'سەرکەوتووترین هاوبەشمان',
+        'partner-2': 'شركة البركة للطباعة',
+        'partner-2-desc': 'باشترین کڕیار',
+        'partner-3': 'مطبعة السليمانية',
+        'partner-3-desc': 'هاوبەشێکی جێگیر',
+        'partner-4': 'شركة اربيل للطباعة',
+        'partner-4-desc': 'کڕیارێکی دائمی',
+        'partner-5': 'مطبعة دهوك الحديثة',
+        'partner-5-desc': 'هاوبەشێکی گەشەپێدراو',
+        'partner-6': 'شركة كركوك للطباعة',
+        'partner-6-desc': 'باشترین براند',
+        'partner-7': 'مطبعة حلبجة',
+        'partner-7-desc': 'شريك موثوق',
+        'partner-8': 'شركة الزاخو للطباعة',
+        'partner-8-desc': 'عميل مميز',
+        'partner-9': 'مطبعة اربيل الدولية',
+        'partner-9-desc': 'شريك استراتيجي',
+        'partner-10': 'شركة القامشلي للطباعة',
+        'partner-10-desc': 'عميل دائم',
+        'partner-11': 'مطبعة اربيل الحديثة',
+        'partner-11-desc': 'شريك تجاري',
+        'partner-12': 'شركة السليمانية للطباعة',
+        'partner-12-desc': 'عميل مهم',
+        'partner-13': 'مطبعة رانيە',
+        'partner-13-desc': 'شريك محلي',
+        'partner-14': 'شركة شقلاوة للطباعة',
+        'partner-14-desc': 'عميل جديد',
+        'partner-15': 'مطبعة سوران',
+        'partner-15-desc': 'شريك نشط',
+        'partner-16': 'شركة پیرەمەگروون للطباعة',
+        'partner-16-desc': 'عميل VIP',
+        'partner-17': 'مطبعة شارەسوور',
+        'partner-17-desc': 'شريك مميز',
+        'partner-18': 'شركة كويسنجق للطباعة',
+        'partner-18-desc': 'عميل موثوق',
+        'partner-19': 'مطبعة چەمچەماڵ',
+        'partner-19-desc': 'شريك فعال',
+        'partner-20': 'شركة پیرەمەگروون للطباعة',
+        'partner-20-desc': 'عميل دائم',
         'contact-title': 'پەیوەندی لەگەڵمان',
-        'contact-subtitle': 'بۆ هەر پرسیارێک یان داواکارییەک پەیوەندیمان پێوە بکەن',
+        'contact-subtitle': 'ئامادەیین بۆ یارمەتی دانی براندەکەت',
         'contact-form-title': 'فۆرمی پەیوەندی',
-        'contact-name': 'ناوت',
-        'contact-phone': 'ژمارەی مۆبایل',
-        'contact-description': 'وەسفێک لەسەر داواکارییەکەت',
-        'contact-submit': 'ناردن',
+        'contact-form-name': 'ناو',
+        'contact-form-phone': 'ژمارەی مۆبایل',
+        'contact-form-description': 'وشەسەرەکی داواکەت',
+        'contact-form-submit': 'ناردن',
         'contact-info-title': 'زانیاری پەیوەندی',
-        'contact-address': 'Bahrka - 150m overpass, Erbil, Iraq',
-        'map-title': 'شوێنی چاپخانەکەمان',
-        'footer-info': 'زانیاری',
-        'footer-desc': 'باشترین چاپخانە لە هەرێمی کوردستان',
-        'footer-contact': 'پەیوەندی',
-        'footer-address': 'Bahrka - 150m overpass, Erbil, Iraq',
-        'footer-follow': 'شوێنەکانمان',
-        'footer-copyright': '© 2025 Rix Printing. هەموو مافەکانی پارێزراون.'
+        'view-map-btn': 'بینینی شوێن لەسەر نەخشە',
+        'footer-desc': 'چاپخانەیەکی تایبەت بە چاپەمەنی گشتی لە هەرێمی کوردستان'
     },
     ar: {
-        'nav-services': 'خدماتنا',
-        'nav-designs': 'تصاميم المميزة',
-        'nav-about': 'من نحن',
-        'nav-contact': 'اتصل بنا',
-        'nav-blog': 'المدونة',
-        'nav-whatsapp': 'واتساب',
+        'mobile-nav-services': 'خدماتنا',
+        'mobile-nav-designs': 'تصاميم وم products مميزة',
+        'mobile-nav-about': 'من نحن',
+        'mobile-nav-partners': 'شركاؤنا وعملاؤنا',
+        'mobile-nav-contact': 'اتصل بنا',
+        'mobile-nav-blog': 'المدونة',
+        'mobile-nav-whatsapp': 'واتساب',
+        'desktop-nav-services': 'خدماتنا',
+        'desktop-nav-designs': 'تصاميمنا',
+        'desktop-nav-about': 'من نحن',
+        'desktop-nav-partners': 'شركاؤنا وعملاؤنا',
+        'desktop-nav-contact': 'اتصل بنا',
+        'desktop-nav-blog': 'المدونة',
         'hero-title': 'مطبعة ريكس للطباعة العامة',
-        'hero-subtitle': 'نحن نساعد العلامات التجارية على إنشاء طباعة مميزة وجذابة.',
-        'hero-trust': 'موثوقية',
+        'hero-subtitle': 'نحن نساعد العلامات التجارية على إنشاء طباعة فريدة وجذابة.',
+        'hero-trust': 'ثقة',
         'hero-quality': 'جودة',
         'hero-speed': 'سرعة',
         'hero-cta': 'ابدأ الآن',
@@ -132,14 +194,14 @@ const translations = {
         'printing-types': 'أنواع الطباعة',
         'offset-printing': '• طباعة أوفست',
         'digital-printing': '• طباعة رقمية',
-        'embossing': '• طباعة بارزة',
+        'embossing': '• حروف بارزة',
         'uv-dtf': '• طباعة UV DTF',
         'dtf-printing': '• طباعة DTF',
-        'tampo-printing': '• طباعة تمبوب',
+        'tampo-printing': '• طباعة تمبيو',
         'laser-printing': '• طباعة ليزر',
         'thermal-printing': '• طباعة حرارية',
         'screen-printing': '• طباعة شاشة',
-        'drum-printing': '• طباعة درام',
+        'drum-printing': '• طباعة دروم',
         'poster-printing': 'طباعة بوستر وبنر',
         'design-print': '• تصميم وطباعة',
         'large-format': '• طباعة كبيرة الحجم',
@@ -147,107 +209,162 @@ const translations = {
         'book-printing': 'طباعة كتب ومجلات',
         'various-designs': '• تصاميم وأحجام متنوعة',
         'cover-printing': '• طباعة الغلاف والداخل',
-        'card-printing': 'طباعة بطاقات دعوة وعمل',
+        'card-printing': 'طباعة بطاقات دعوة وأعمال',
         'custom-design': '• تصميم مخصص',
-        'precise-cutting': '• قص دقيق',
+        'precise-cutting': '• قطع دقيق',
         'clothing-printing': 'طباعة ملابس وأقمشة',
-        'direct-printing': '• طباعة مباشرة ودرام',
+        'direct-printing': '• درومان وطباعة مباشرة',
         'color-variety': '• ألوان وتصاميم متنوعة',
         'custom-packaging': 'طباعة كرتون مخصص',
         'packaging-desc': 'مطبعة ريكس تتيح لك تصميم وطباعة منتجات مخصصة لعلامتك التجارية.',
-        'design-products': 'تصاميم المميزة',
-        'booklet-catalog': 'كتيبات وكتالوجات',
-        'brochure': 'بروشورات',
-        'business-card': 'بطاقات العمل',
-        'calendars': 'تقاويم',
-        'car-stickers': 'ملصقات السيارات',
-        'carbon-forms': 'نماذج الكربون',
-        'clocks': 'ساعات',
-        'clothing-accessories': 'ملابس وإكسسوارات',
-        'custom-pens': 'أقلام مخصصة',
-        'desk-sets': 'مجموعات المكتب',
-        'gift-baskets': 'سلال هدايا',
-        'envelopes': 'ظروف',
-        'flags': 'أعلام',
-        'flyers': 'منشورات',
-        'folders': 'مجلدات',
-        'keychains': 'سلاسل مفاتيح',
-        'labels-stickers': 'ملصقات وستيكرات',
-        'letterheads': 'رؤوساءاءات',
-        'notepads': 'دفاتر ملاحظات',
-        'notebooks': 'كراسات',
-        'notepads-small': 'دفاتر صغيرة',
-        'services-title': 'خدماتنا',
-        'food-products': 'منتجات غذائية إعلانية',
-        'gift-items': 'هدايا إعلانية',
-        'advertising-products': 'منتجات إعلانية',
-        'advertising-technology': 'تكنولوجيا إعلانية',
-        'safety-items': 'عناصر سلامة',
-        'signs-banners': 'لافتات وبنرات',
-        'flyers-d': 'منشورات د',
-        'process-title': 'طباعتك المخصصة',
-        'process-subtitle': 'في ريكس برنتينغ، نقدم خدمات طباعة عالية الجودة.',
-        'process-step1-title': 'الخطوة الأولى: التصميم والطباعة',
-        'process-step1-desc': 'اختيار نوع التصميم والمواد للمنتج المحدد.',
-        'process-step2-title': 'الخطوة الثانية: العينة والموافقة',
-        'process-step2-desc': 'تقديم عينة للمراجعة والموافقة النهائية.',
-        'process-step3-title': 'الخطوة الثالثة: الطباعة والتسليم',
-        'process-step3-desc': 'بدء عملية الطباعة والتسليم بجودة عالية.',
+        'designs-title': 'تصاميم ومproducts مميزة',
+        'designs-subtitle': 'قسم مخصص للتصاميم والمنتجات المميزة',
+        'designs-booklets': 'Booklets & Catalogs',
+        'designs-booklets-desc': 'تصميم وطباعة كتيبات وكتالوجات مخصصة',
+        'designs-brochures': 'Brochures',
+        'designs-brochures-desc': 'بروشورات إعلانية بتصاميم حديثة',
+        'designs-business-cards': 'Business Cards',
+        'designs-business-cards-desc': 'بطاقات أعمال مخصصة ومصممة خصيصاً',
+        'designs-calendars': 'Calendars',
+        'designs-calendars-desc': 'تقويمات حائطية ومكتبية مخصصة',
+        'designs-car-stickers': 'Car Stickers',
+        'designs-car-stickers-desc': 'ملصقات سيارات وشاشات',
+        'designs-carbon-forms': 'Carbon Forms',
+        'designs-carbon-forms-desc': 'نماذج كربون نسخ متعددة',
+        'designs-clocks': 'Clocks',
+        'designs-clocks-desc': 'ساعات حائطية ومكتبية إعلانية',
+        'designs-clothing': 'Clothing & Accessories',
+        'designs-clothing-desc': 'ملابس وأقمشة واكسسوارات إعلانية',
+        'designs-pens': 'Custom Pens',
+        'designs-pens-desc': 'أقلام مخصصة ومصممة خصيصاً',
+        'designs-desk-sets': 'Desk Sets',
+        'designs-desk-sets-desc': 'مجموعات مكتبية ومستلزمات مكاتب',
+        'designs-gift-baskets': 'Gift Baskets',
+        'designs-gift-baskets-desc': 'سلال هدايا ومنتجات ترويجية مميزة',
+        'designs-envelopes': 'Envelopes',
+        'designs-envelopes-desc': 'ظروف مخصصة باسم العلامة التجارية',
+        'designs-flags': 'Flags',
+        'designs-flags-desc': 'أعلام وبنرات إعلانية',
+        'designs-flyers': 'Flyers',
+        'designs-flyers-desc': 'منشورات إعلانية بجودة عالية',
+        'designs-folders': 'Folders',
+        'designs-folders-desc': 'مجلدات مخصصة وملفات ترويجية',
+        'designs-keychains': 'Keychains',
+        'designs-keychains-desc': 'سلاسل مفاتيح ومنتجات ترويجية',
+        'designs-labels': 'Labels & Stickers',
+        'designs-labels-desc': 'ملصقات وستيكرات متنوعة الأشكال',
+        'designs-letterheads': 'Letterheads',
+        'designs-letterheads-desc': 'ورق رسمي مخصص ورسميات الشركة',
+        'designs-notepads': 'Notepads',
+        'designs-notepads-desc': 'دفاتر ملاحظات وكتب صغيرة',
+        'designs-notebooks': 'Notebooks',
+        'designs-notebooks-desc': 'دفاتر كردية وإنجليزية مخصصة',
+        'designs-small-notepads': 'Small Notepads',
+        'designs-small-notepads-desc': 'مفكرة صغيرة وكبيرة مخصصة',
+        'designs-our-services': 'Our Services',
+        'designs-our-services-desc': 'جميع خدمات الطباعة المميزة',
+        'designs-food-products': 'Advertising Food Products',
+        'designs-food-products-desc': 'منتجات غذائية إعلانية',
+        'designs-gift-items': 'Advertising Gift Items',
+        'designs-gift-items-desc': 'هدايا إعلانية ومنتجات ترويجية',
+        'designs-advertising-products': 'Advertising Products',
+        'designs-advertising-products-desc': 'جميع المنتجات الإعلانية',
+        'designs-technology': 'Advertising Technology',
+        'designs-technology-desc': 'تكنولوجيا حديثة للإعلان',
+        'designs-safety-items': 'Safety Items',
+        'designs-safety-items-desc': 'منتجات السلامة والأمان',
+        'designs-signs-banners': 'Signs & Banners',
+        'designs-signs-banners-desc': 'لافتات وبنرات كبيرة',
+        'designs-flyers-d': 'Flyers D',
+        'designs-flyers-d-desc': 'منشورات ديجيتال ومطبوعة',
         'about-title': 'من نحن',
-        'about-desc1': 'نحن، في مطبعة ريكس، نفخر بتقديم خدمات الطباعة لعملائنا الكرام.',
-        'about-desc2': 'للسنوات عديدة، دعمنا عملائنا في مختلف مجالات الطباعة، من خلال بذل كل جهدنا لتقديم خدمات طباعة عامة عالية الجودة والتطور.',
-        'about-trust': 'موثوقية',
+        'about-desc1': 'نحن، في مطبعة ريكس، نفتخر بتقديم خدمات الطباعة لعملائنا الكرام.',
+        'about-desc2': 'لعدة سنوات، دعمنا عملائنا في مختلف مجالات الطباعة، من خلال السعي لاستخدام كامل قدراتنا لتقديم خدمة طباعة عامة عالية الجودة والمتقدمة.',
+        'about-trust': 'موثوق',
         'about-quality': 'جودة',
         'about-speed': 'سرعة',
-        'learn-title': 'تعلم كيف تنجح في الطباعة',
-        'learn-subtitle': 'نحن نقدم حلول طباعة مبتكرة تساعد العلامات التجارية على التميز.',
-        'learn-innovation': 'الابتكار',
-        'learn-innovation-desc': 'تكنولوجيا متقدمة لأفضل النتائج',
-        'learn-creativity': 'الإبداع',
-        'learn-creativity-desc': 'تصاميم مخصصة لعلامتك التجارية',
-        'learn-speed': 'السرعة',
-        'learn-speed-desc': 'السرعة في الطباعة والتسليم',
         'partners-title': 'شركاؤنا وعملاؤنا',
         'partners-subtitle': 'عملاؤنا هم مصدر قوتنا ونجاحنا',
+        'partner-1': 'شركة ريكس للطباعة',
+        'partner-1-desc': 'أفضل شريك لدينا',
+        'partner-2': 'شركة البركة للطباعة',
+        'partner-2-desc': 'أفضل عميل',
+        'partner-3': 'مطبعة السليمانية',
+        'partner-3-desc': 'شريك ثابت',
+        'partner-4': 'شركة اربيل للطباعة',
+        'partner-4-desc': 'عميل دائم',
+        'partner-5': 'مطبعة دهوك الحديثة',
+        'partner-5-desc': 'شريك نامي',
+        'partner-6': 'شركة كركوك للطباعة',
+        'partner-6-desc': 'أفضل براند',
+        'partner-7': 'مطبعة حلبجة',
+        'partner-7-desc': 'شريك موثوق',
+        'partner-8': 'شركة الزاخو للطباعة',
+        'partner-8-desc': 'عميل مميز',
+        'partner-9': 'مطبعة اربيل الدولية',
+        'partner-9-desc': 'شريك استراتيجي',
+        'partner-10': 'شركة القامشلي للطباعة',
+        'partner-10-desc': 'عميل دائم',
+        'partner-11': 'مطبعة اربيل الحديثة',
+        'partner-11-desc': 'شريك تجاري',
+        'partner-12': 'شركة السليمانية للطباعة',
+        'partner-12-desc': 'عميل مهم',
+        'partner-13': 'مطبعة رانيە',
+        'partner-13-desc': 'شريك محلي',
+        'partner-14': 'شركة شقلاوة للطباعة',
+        'partner-14-desc': 'عميل جديد',
+        'partner-15': 'مطبعة سوران',
+        'partner-15-desc': 'شريك نشط',
+        'partner-16': 'شركة پیرەمەگروون للطباعة',
+        'partner-16-desc': 'عميل VIP',
+        'partner-17': 'مطبعة شارەسوور',
+        'partner-17-desc': 'شريك مميز',
+        'partner-18': 'شركة كويسنجق للطباعة',
+        'partner-18-desc': 'عميل موثوق',
+        'partner-19': 'مطبعة چەمچەماڵ',
+        'partner-19-desc': 'شريك فعال',
+        'partner-20': 'شركة پیرەمەگروون للطباعة',
+        'partner-20-desc': 'عميل دائم',
         'contact-title': 'اتصل بنا',
-        'contact-subtitle': 'لا تتردد في الاتصال بنا لأي سؤال أو طلب',
+        'contact-subtitle': 'نحن مستعدون لمساعدة علامتك التجارية',
         'contact-form-title': 'نموذج الاتصال',
-        'contact-name': 'اسمك',
-        'contact-phone': 'رقم الهاتف',
-        'contact-description': 'وصف طلبك',
-        'contact-submit': 'إرسال',
+        'contact-form-name': 'الاسم',
+        'contact-form-phone': 'رقم الهاتف',
+        'contact-form-description': 'وصف طلبك',
+        'contact-form-submit': 'إرسال',
         'contact-info-title': 'معلومات الاتصال',
-        'contact-address': 'بحركة - بعد جسر 150م، أربيل، العراق',
-        'map-title': 'موقع مطبعتنا',
-        'footer-info': 'معلومات',
-        'footer-desc': 'أفضل مطبعة في إقليم كردستان',
-        'footer-contact': 'اتصل بنا',
-        'footer-address': 'بحركة - بعد جسر 150م، أربيل، العراق',
-        'footer-follow': 'تابعنا',
-        'footer-copyright': '© 2025 ريكس برنتينغ. جميع الحقوق محفوظة.'
+        'view-map-btn': 'عرض الموقع على الخريطة',
+        'footer-desc': 'مطبعة متخصصة في الطباعة العامة في إقليم كردستان'
     },
     en: {
-        'nav-services': 'Services',
-        'nav-designs': 'Featured Designs',
-        'nav-about': 'About Us',
-        'nav-contact': 'Contact',
-        'nav-blog': 'Blog',
-        'nav-whatsapp': 'WhatsApp',
-        'hero-title': 'Rix Printing - General Printing Services',
-        'hero-subtitle': 'We help brands create distinctive and attractive printing.',
+        'mobile-nav-services': 'Services',
+        'mobile-nav-designs': 'Featured Designs',
+        'mobile-nav-about': 'About Us',
+        'mobile-nav-partners': 'Our Partners',
+        'mobile-nav-contact': 'Contact',
+        'mobile-nav-blog': 'Blog',
+        'mobile-nav-whatsapp': 'WhatsApp',
+        'desktop-nav-services': 'Services',
+        'desktop-nav-designs': 'Designs',
+        'desktop-nav-about': 'About Us',
+        'desktop-nav-partners': 'Our Partners',
+        'desktop-nav-contact': 'Contact',
+        'desktop-nav-blog': 'Blog',
+        'hero-title': 'Rix General Printing Press',
+        'hero-subtitle': 'We help brands create unique and attractive printing.',
         'hero-trust': 'Trust',
         'hero-quality': 'Quality',
         'hero-speed': 'Speed',
         'hero-cta': 'Get Started',
         'services-title': 'Our Services',
-        'services-subtitle': 'Rix Printing offers these services',
-        'printing-types': 'Printing Types',
+        'services-subtitle': 'Rix Printing Press offers these services',
+        'printing-types': 'Types of Printing',
         'offset-printing': '• Offset Printing',
         'digital-printing': '• Digital Printing',
         'embossing': '• Embossing',
         'uv-dtf': '• UV DTF Printing',
         'dtf-printing': '• DTF Printing',
-        'tampo-printing': '• Tampo Printing',
+        'tampo-printing': '• Tampon Printing',
         'laser-printing': '• Laser Printing',
         'thermal-printing': '• Thermal Printing',
         'screen-printing': '• Screen Printing',
@@ -259,484 +376,399 @@ const translations = {
         'book-printing': 'Book & Magazine Printing',
         'various-designs': '• Various Designs & Sizes',
         'cover-printing': '• Cover & Interior Printing',
-        'card-printing': 'Business Card & Invitation Printing',
+        'card-printing': 'Invitation & Business Card Printing',
         'custom-design': '• Custom Design',
         'precise-cutting': '• Precise Cutting',
         'clothing-printing': 'Clothing & Fabric Printing',
-        'direct-printing': '• Direct & Drum Printing',
+        'direct-printing': '• Direct Printing & Drum',
         'color-variety': '• Various Colors & Designs',
-        'custom-packaging': 'Custom Packaging Printing',
+        'custom-packaging': 'Custom Box Printing',
         'packaging-desc': 'Rix Printing allows you to design and print custom products for your brand.',
-        'design-products': 'Featured Designs',
-        'booklet-catalog': 'Booklets & Catalogs',
-        'brochure': 'Brochures',
-        'business-card': 'Business Cards',
-        'calendars': 'Calendars',
-        'car-stickers': 'Car Stickers',
-        'carbon-forms': 'Carbon Forms',
-        'clocks': 'Clocks',
-        'clothing-accessories': 'Clothing & Accessories',
-        'custom-pens': 'Custom Pens',
-        'desk-sets': 'Desk Sets',
-        'gift-baskets': 'Gift Baskets',
-        'envelopes': 'Envelopes',
-        'flags': 'Flags',
-        'flyers': 'Flyers',
-        'folders': 'Folders',
-        'keychains': 'Keychains',
-        'labels-stickers': 'Labels & Stickers',
-        'letterheads': 'Letterheads',
-        'notepads': 'Notepads',
-        'notebooks': 'Notebooks',
-        'notepads-small': 'Small Notepads',
-        'services-title': 'Our Services',
-        'food-products': 'Advertising Food Products',
-        'gift-items': 'Advertising Gift Items',
-        'advertising-products': 'Advertising Products',
-        'advertising-technology': 'Advertising Technology',
-        'safety-items': 'Safety Items',
-        'signs-banners': 'Signs & Banners',
-        'flyers-d': 'Flyers D',
-        'process-title': 'Your Custom Printing',
-        'process-subtitle': 'At Rix Printing, we offer high-quality printing options.',
-        'process-step1-title': 'Step 1: Design & Print',
-        'process-step1-desc': 'Choosing the design type and materials for the specified product.',
-        'process-step2-title': 'Step 2: Sample & Approval',
-        'process-step2-desc': 'Providing a sample for review and final approval.',
-        'process-step3-title': 'Step 3: Printing & Delivery',
-        'process-step3-desc': 'Starting the printing process and delivery with high quality.',
+        'designs-title': 'Featured Designs',
+        'designs-subtitle': 'Special section for unique designs and products',
+        'designs-booklets': 'Booklets & Catalogs',
+        'designs-booklets-desc': 'Design and printing of special booklets and catalogs',
+        'designs-brochures': 'Brochures',
+        'designs-brochures-desc': 'Advertising brochures with modern designs',
+        'designs-business-cards': 'Business Cards',
+        'designs-business-cards-desc': 'Custom designed and personalized business cards',
+        'designs-calendars': 'Calendars',
+        'designs-calendars-desc': 'Custom wall and desk calendars',
+        'designs-car-stickers': 'Car Stickers',
+        'designs-car-stickers-desc': 'Car stickers and window decals',
+        'designs-carbon-forms': 'Carbon Forms',
+        'designs-carbon-forms-desc': 'Carbonless multi-copy forms',
+        'designs-clocks': 'Clocks',
+        'designs-clocks-desc': 'Wall and desk advertising clocks',
+        'designs-clothing': 'Clothing & Accessories',
+        'designs-clothing-desc': 'Advertising clothing, fabrics and accessories',
+        'designs-pens': 'Custom Pens',
+        'designs-pens-desc': 'Custom designed and personalized pens',
+        'designs-desk-sets': 'Desk Sets',
+        'designs-desk-sets-desc': 'Office desk sets and accessories',
+        'designs-gift-baskets': 'Gift Baskets',
+        'designs-gift-baskets-desc': 'Promotional gift baskets and special products',
+        'designs-envelopes': 'Envelopes',
+        'designs-envelopes-desc': 'Brand-specific custom envelopes',
+        'designs-flags': 'Flags',
+        'designs-flags-desc': 'Advertising flags and banners',
+        'designs-flyers': 'Flyers',
+        'designs-flyers-desc': 'High-quality advertising flyers',
+        'designs-folders': 'Folders',
+        'designs-folders-desc': 'Custom folders and promotional files',
+        'designs-keychains': 'Keychains',
+        'designs-keychains-desc': 'Promotional keychains and gift items',
+        'designs-labels': 'Labels & Stickers',
+        'designs-labels-desc': 'Various types of labels and stickers',
+        'designs-letterheads': 'Letterheads',
+        'designs-letterheads-desc': 'Official and custom company letterheads',
+        'designs-notepads': 'Notepads',
+        'designs-notepads-desc': 'Notepads and small notebooks',
+        'designs-notebooks': 'Notebooks',
+        'designs-notebooks-desc': 'Custom Kurdish and English notebooks',
+        'designs-small-notepads': 'Small Notepads',
+        'designs-small-notepads-desc': 'Small and large custom notepads',
+        'designs-our-services': 'Our Services',
+        'designs-our-services-desc': 'All premium printing services',
+        'designs-food-products': 'Advertising Food Products',
+        'designs-food-products-desc': 'Advertising food products',
+        'designs-gift-items': 'Advertising Gift Items',
+        'designs-gift-items-desc': 'Advertising gifts and promotional items',
+        'designs-advertising-products': 'Advertising Products',
+        'designs-advertising-products-desc': 'All advertising products',
+        'designs-technology': 'Advertising Technology',
+        'designs-technology-desc': 'Modern technology for advertising',
+        'designs-safety-items': 'Safety Items',
+        'designs-safety-items-desc': 'Safety and security products',
+        'designs-signs-banners': 'Signs & Banners',
+        'designs-signs-banners-desc': 'Large signs and advertising banners',
+        'designs-flyers-d': 'Flyers D',
+        'designs-flyers-d-desc': 'Digital and printed flyers',
         'about-title': 'About Us',
         'about-desc1': 'We, at Rix Printing, take pride in providing printing services to our valued customers.',
-        'about-desc2': 'For many years, we have supported our customers in various printing fields, striving to use all our capabilities to provide high-quality and advanced general printing services.',
+        'about-desc2': 'For several years, we have supported our customers in various printing fields, by striving to use all our capabilities to provide high-quality and advanced general printing service.',
         'about-trust': 'Trusted',
         'about-quality': 'Quality',
         'about-speed': 'Speed',
-        'learn-title': 'Learn How to Succeed in Printing',
-        'learn-subtitle': 'We provide innovative printing solutions that help brands stand out.',
-        'learn-innovation': 'Innovation',
-        'learn-innovation-desc': 'Advanced technology for best results',
-        'learn-creativity': 'Creativity',
-        'learn-creativity-desc': 'Custom designs for your brand',
-        'learn-speed': 'Speed',
-        'learn-speed-desc': 'Speed in printing and delivery',
         'partners-title': 'Our Partners & Customers',
         'partners-subtitle': 'Our customers are our source of strength and success',
+        'partner-1': 'Rix Printing Company',
+        'partner-1-desc': 'Our most successful partner',
+        'partner-2': 'Al-Baraka Printing Company',
+        'partner-2-desc': 'Best customer',
+        'partner-3': 'Sulaymaniyah Printing Press',
+        'partner-3-desc': 'Stable partner',
+        'partner-4': 'Erbil Printing Company',
+        'partner-4-desc': 'Permanent customer',
+        'partner-5': 'Dohuk Modern Printing Press',
+        'partner-5-desc': 'Growing partner',
+        'partner-6': 'Kirkuk Printing Company',
+        'partner-6-desc': 'Best brand',
+        'partner-7': 'Halabja Printing Press',
+        'partner-7-desc': 'Trusted partner',
+        'partner-8': 'Zakho Printing Company',
+        'partner-8-desc': 'Special client',
+        'partner-9': 'Erbil International Printing Press',
+        'partner-9-desc': 'Strategic partner',
+        'partner-10': 'Qamishli Printing Company',
+        'partner-10-desc': 'Permanent client',
+        'partner-11': 'Erbil Modern Printing Press',
+        'partner-11-desc': 'Business partner',
+        'partner-12': 'Sulaymaniyah Printing Company',
+        'partner-12-desc': 'Important client',
+        'partner-13': 'Rania Printing Press',
+        'partner-13-desc': 'Local partner',
+        'partner-14': 'Shqlawa Printing Company',
+        'partner-14-desc': 'New client',
+        'partner-15': 'Soran Printing Press',
+        'partner-15-desc': 'Active partner',
+        'partner-16': 'Piramagrun Printing Company',
+        'partner-16-desc': 'VIP client',
+        'partner-17': 'Shareasoor Printing Press',
+        'partner-17-desc': 'Special partner',
+        'partner-18': 'Koysanjaq Printing Company',
+        'partner-18-desc': 'Trusted client',
+        'partner-19': 'Chamchamal Printing Press',
+        'partner-19-desc': 'Active partner',
+        'partner-20': 'Piramagrun Printing Company',
+        'partner-20-desc': 'Permanent client',
         'contact-title': 'Contact Us',
-        'contact-subtitle': 'Feel free to contact us for any questions or requests',
+        'contact-subtitle': 'We are ready to help your brand',
         'contact-form-title': 'Contact Form',
-        'contact-name': 'Your Name',
-        'contact-phone': 'Phone Number',
-        'contact-description': 'Description of your request',
-        'contact-submit': 'Send',
+        'contact-form-name': 'Your Name',
+        'contact-form-phone': 'Phone Number',
+        'contact-form-description': 'Description of your request',
+        'contact-form-submit': 'Send',
         'contact-info-title': 'Contact Information',
-        'contact-address': 'Bahrka - 150m overpass, Erbil, Iraq',
-        'map-title': 'Our Printing House Location',
-        'footer-info': 'Information',
-        'footer-desc': 'The best printing house in Kurdistan Region',
-        'footer-contact': 'Contact',
-        'footer-address': 'Bahrka - 150m overpass, Erbil, Iraq',
-        'footer-follow': 'Follow Us',
-        'footer-copyright': '© 2025 Rix Printing. All rights reserved.'
+        'view-map-btn': 'View Location on Map',
+        'footer-desc': 'A printing press specializing in general printing in Kurdistan Region'
     }
 };
 
 // Current language
-let currentLang = 'ckb';
+let currentLanguage = 'ckb';
 
-// DOM elements
-const langToggle = document.getElementById('langToggle');
-const langDropdown = document.getElementById('langDropdown');
-const currentLangSpan = document.getElementById('currentLang');
-const html = document.documentElement;
-const body = document.body;
+// Side menu functionality
+function toggleSideMenu() {
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('sideMenuOverlay');
+    
+    sideMenu.classList.toggle('open');
+    overlay.classList.toggle('open');
+}
 
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
-    // Load saved language
-    const savedLang = localStorage.getItem('preferred-language') || 'ckb';
-    switchLanguage(savedLang);
+function closeSideMenu() {
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('sideMenuOverlay');
     
-    // Initialize mobile menu
-    initMobileMenu();
-    
-    // Initialize smooth scrolling
-    initSmoothScrolling();
-    
-    // Initialize form handling
-    initContactForm();
-    
-    // Initialize animations
-    initAnimations();
-    
-    // Initialize featured designs
-    initFeaturedDesigns();
-});
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('open');
+}
 
 // Language switching functionality
-langToggle.addEventListener('click', function() {
-    langDropdown.classList.toggle('hidden');
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    if (!langToggle.contains(event.target) && !langDropdown.contains(event.target)) {
-        langDropdown.classList.add('hidden');
-    }
-});
-
-// Language selection
-langDropdown.addEventListener('click', function(event) {
-    if (event.target.classList.contains('language-option')) {
-        const selectedLang = event.target.dataset.lang;
-        switchLanguage(selectedLang);
-        langDropdown.classList.add('hidden');
-    }
-});
-
-// Switch language function
 function switchLanguage(lang) {
-    currentLang = lang;
+    currentLanguage = lang;
     
-    // Update UI language
-    currentLangSpan.textContent = getLanguageName(lang);
-    
-    // Update active language option
-    document.querySelectorAll('.language-option').forEach(option => {
-        option.classList.remove('active');
-        if (option.dataset.lang === lang) {
-            option.classList.add('active');
-        }
+    // Update language buttons in side menu
+    document.querySelectorAll('.language-option').forEach(btn => {
+        btn.classList.remove('active');
     });
+    document.getElementById(`lang-${lang}`).classList.add('active');
     
-    // Update HTML attributes
-    html.lang = lang;
-    html.dir = (lang === 'ckb' || lang === 'ar') ? 'rtl' : 'ltr';
+    // Update language buttons in top navigation
+    document.querySelectorAll('.top-lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`top-lang-${lang}`).classList.add('active');
     
-    // Update body classes
-    body.classList.remove('rtl', 'ltr');
-    body.classList.add(html.dir === 'rtl' ? 'rtl' : 'ltr');
+    // Update HTML lang and dir attributes
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
     
-    // Update font
-    if (lang === 'ckb' || lang === 'ar') {
-        body.classList.add('font-kurdish');
-        body.classList.remove('font-english');
+    // Update body class for RTL/LTR
+    if (lang === 'en') {
+        document.body.classList.remove('rtl');
+        document.body.classList.add('ltr');
     } else {
-        body.classList.add('font-english');
-        body.classList.remove('font-kurdish');
+        document.body.classList.remove('ltr');
+        document.body.classList.add('rtl');
     }
     
-    // Update text content
-    updateTextContent();
+    // Apply translations
+    applyTranslations(lang);
     
-    // Save preference
-    localStorage.setItem('preferred-language', lang);
+    // Close side menu after language change
+    closeSideMenu();
 }
 
-// Get language display name
-function getLanguageName(lang) {
-    const names = {
-        'ckb': 'کوردی',
-        'ar': 'العربية',
-        'en': 'English'
-    };
-    return names[lang] || 'کوردی';
-}
-
-// Update text content based on current language
-function updateTextContent() {
-    const elements = document.querySelectorAll('[data-key]');
-    elements.forEach(element => {
-        const key = element.dataset.key;
-        if (translations[currentLang] && translations[currentLang][key]) {
-            element.textContent = translations[currentLang][key];
+function applyTranslations(lang) {
+    const langData = translations[lang];
+    
+    // Apply translations to all elements
+    Object.keys(langData).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.textContent = langData[key];
         }
     });
+    
+    // Update Arabic and Kurdish text styling
+    updateTextStyling(lang);
 }
 
-// Mobile menu functionality
-function initMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMobileMenu = document.getElementById('closeMobileMenu');
-    const mobileMenuOverlay = createMobileMenuOverlay();
+function updateTextStyling(lang) {
+    const body = document.body;
     
-    mobileMenuBtn.addEventListener('click', function() {
-        openMobileMenu();
-    });
+    // Remove existing language classes
+    body.classList.remove('kurdish-text', 'arabic-text');
     
-    closeMobileMenu.addEventListener('click', function() {
-        closeMobileMenuFunction();
-    });
-    
-    mobileMenuOverlay.addEventListener('click', function() {
-        closeMobileMenuFunction();
-    });
-    
-    function openMobileMenu() {
-        mobileMenu.classList.add('open');
-        mobileMenuOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeMobileMenuFunction() {
-        mobileMenu.classList.remove('open');
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    function createMobileMenuOverlay() {
-        const overlay = document.createElement('div');
-        overlay.className = 'mobile-menu-overlay';
-        document.body.appendChild(overlay);
-        return overlay;
+    // Add appropriate class based on language
+    if (lang === 'ckb') {
+        body.classList.add('kurdish-text');
+    } else if (lang === 'ar') {
+        body.classList.add('arabic-text');
     }
 }
 
 // Smooth scrolling for navigation links
-function initSmoothScrolling() {
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize with default language
+    applyTranslations(currentLanguage);
+    updateTextStyling(currentLanguage);
+    
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed header
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
-}
+    
+    // Close side menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const sideMenu = document.getElementById('sideMenu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        
+        if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            closeSideMenu();
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        // Close side menu on large screens
+        if (window.innerWidth >= 1025) {
+            closeSideMenu();
+        }
+    });
+});
 
-// Contact form handling
-function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+// Add scroll effect to navigation
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.desktop-nav');
+    if (window.scrollY > 100) {
+        nav.style.background = 'rgba(255, 255, 255, 0.95)';
+        nav.style.backdropFilter = 'blur(10px)';
+    } else {
+        nav.style.background = 'white';
+        nav.style.backdropFilter = 'none';
+    }
+});
+
+// Form submission handling
+function handleFormSubmission(formId) {
+    const form = document.getElementById(formId);
+    if (form) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            sendContactEmail(e, currentLang);
+            
+            // Show success message based on current language
+            const messages = {
+                ckb: 'سڵاو! پەیامەکەت نێردرا. ئەمە تەنها نموونەیە، پەیامەکەت نەنێردرا.',
+                ar: 'شكراً! تم إرسال رسالتك. هذا فقط مثال، لم يتم إرسال رسالتك الفعلية.',
+                en: 'Thank you! Your message has been sent. This is just an example, your actual message was not sent.'
+            };
+            
+            alert(messages[currentLanguage]);
+            form.reset();
         });
     }
 }
 
-// Send contact email function
-function sendContactEmail(event, lang) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const formData = new FormData(form);
-    const data = {
-        name: formData.get('name'),
-        phone: formData.get('phone'),
-        description: formData.get('description'),
-        lang: lang
-    };
-    
-    // Show loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.innerHTML = '<span class="loading"></span> جاري الإرسال...';
-    submitBtn.disabled = true;
-    
-    // Simulate API call (replace with actual endpoint)
-    setTimeout(() => {
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        
-        // Show success message
-        showNotification('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
-        
-        // Reset form
-        form.reset();
-    }, 2000);
-    
-    // Actual API call (uncomment when backend is ready)
-    /*
-    fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(result => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        
-        if (result.success) {
-            showNotification('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
-            form.reset();
-        } else {
-            showNotification('حدث خطأ أثناء الإرسال. حاول مرة أخرى.', 'error');
-        }
-    })
-    .catch(error => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        showNotification('حدث خطأ أثناء الإرسال. حاول مرة أخرى.', 'error');
-    });
-    */
+// Initialize form handling
+document.addEventListener('DOMContentLoaded', function() {
+    handleFormSubmission('contactForm');
+});
+
+// Add loading animation for better UX
+function showLoading(element) {
+    element.innerHTML = '<div class="loading"></div>';
 }
 
-// Show notification function
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm ${
-        type === 'success' ? 'bg-green-500 text-white' :
-        type === 'error' ? 'bg-red-500 text-white' :
-        'bg-blue-500 text-white'
-    }`;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-        notification.style.opacity = '1';
-    }, 100);
-    
-    // Remove after 5 seconds
-    setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
-        notification.style.opacity = '0';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    }, 5000);
+function hideLoading(element, originalContent) {
+    element.innerHTML = originalContent;
 }
 
-// Initialize animations
-function initAnimations() {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
+// Utility function for mobile detection
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Add touch support for mobile devices
+if ('ontouchstart' in window) {
+    document.addEventListener('touchstart', function() {}, { passive: true });
+}
+
+// Performance optimization: Lazy load images
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
             }
         });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    document.querySelectorAll('.card-hover, .design-item, section h2, section p').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
     });
+    
+    images.forEach(img => imageObserver.observe(img));
 }
 
-// Initialize featured designs
-function initFeaturedDesigns() {
-    const designItems = document.querySelectorAll('.design-item');
-    
-    designItems.forEach((item, index) => {
-        // Add click handler for each design item
-        item.addEventListener('click', function() {
-            const title = this.querySelector('.design-title').textContent;
-            const description = this.querySelector('.design-description').textContent;
-            
-            // Show notification with product info
-            showNotification(`بە دیاری کراوە: ${title} - ${description}`, 'info');
-            
-            // Add visual feedback
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
+// Initialize lazy loading
+document.addEventListener('DOMContentLoaded', lazyLoadImages);
+
+// Add hover effects for partner cards
+document.addEventListener('DOMContentLoaded', function() {
+    const partnerCards = document.querySelectorAll('.partner-card');
+    partnerCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
         });
         
-        // Add keyboard navigation
-        item.setAttribute('tabindex', '0');
-        item.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
+
+// Add form validation enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    const formInputs = document.querySelectorAll('.form-input');
+    
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            if (!this.value) {
+                this.parentElement.classList.remove('focused');
             }
         });
     });
-}
+});
 
-// Utility functions
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Handle window resize
-window.addEventListener('resize', debounce(() => {
-    // Close mobile menu on resize
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (window.innerWidth >= 768 && mobileMenu.classList.contains('open')) {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-}, 250));
-
-// Handle scroll events
-let lastScrollTop = 0;
-window.addEventListener('scroll', debounce(() => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const navbar = document.querySelector('nav');
+// Add smooth reveal animations on scroll
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.card-hover, .partner-card, .contact-form, .design-card');
     
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
-        navbar.style.transform = 'translateY(-100%)';
-    } else {
-        // Scrolling up
-        navbar.style.transform = 'translateY(0)';
-    }
-    
-    lastScrollTop = scrollTop;
-}, 100));
-
-// Add scroll effect to navbar
-const navbar = document.querySelector('nav');
-navbar.style.transition = 'transform 0.3s ease';
-
-// Function to scroll to specific sections (used by design items)
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    } else {
-        // If section doesn't exist, show a message
-        showNotification('ئەم بەشە بەردەست نییە لە ئێستادا', 'info');
-    }
-}
-
-// Preload images for better performance
-function preloadImages() {
-    const imageUrls = [
-        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj73Meo.../s600/1111%D8%AB.jpg',
-        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibm75.../s300/357%D8%B95%D8%B9.jpg',
-        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit9gM.../s300/34634576.jpg'
-    ];
-    
-    imageUrls.forEach(url => {
-        const img = new Image();
-        img.src = url;
+    reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('revealed');
+        }
     });
 }
 
-// Initialize image preloading
-preloadImages();
+window.addEventListener('scroll', revealOnScroll);
+
+// Add CSS for reveal animation
+const style = document.createElement('style');
+style.textContent = `
+    .card-hover, .partner-card, .contact-form, .design-card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+    
+    .card-hover.revealed, .partner-card.revealed, .contact-form.revealed, .design-card.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .form-group.focused .form-label {
+        color: var(--primary-color);
+        transform: translateY(-5px);
+    }
+`;
+document.head.appendChild(style);

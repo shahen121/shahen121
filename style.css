@@ -101,7 +101,7 @@ html {
 
 @keyframes slideInLeft {
     from {
-        transform: translateX(-100px);
+        transform: translateX(-100%);
         opacity: 0;
     }
     to {
@@ -110,254 +110,416 @@ html {
     }
 }
 
-/* Mobile menu overlay */
-.mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 30;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.mobile-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Featured Designs Grid */
-.design-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.design-item {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid #e5e7eb;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.design-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-color: var(--primary-color);
-}
-
-.design-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-    transition: left 0.5s;
-}
-
-.design-item:hover::before {
-    left: 100%;
-}
-
-.design-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-}
-
-.design-item:hover .design-icon {
-    transform: scale(1.1);
-    color: var(--accent-color);
-}
-
-.design-title {
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.design-description {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* RTL specific styles */
-.rtl {
-    direction: rtl;
-    text-align: right;
-}
-
-.rtl .ml-4 {
-    margin-left: 0;
-    margin-right: 1rem;
-}
-
-.rtl .mr-4 {
-    margin-right: 0;
-    margin-left: 1rem;
-}
-
-.rtl .pl-4 {
-    padding-left: 0;
-    padding-right: 1rem;
-}
-
-.rtl .pr-4 {
-    padding-right: 0;
-    padding-left: 1rem;
-}
-
-.rtl .text-left {
-    text-align: right !important;
-}
-
-.rtl .text-right {
-    text-align: left !important;
-}
-
-/* LTR styles */
-.ltr {
-    direction: ltr;
-    text-align: left;
-}
-
-.ltr .ml-4 {
-    margin-left: 1rem;
-    margin-right: 0;
-}
-
-.ltr .mr-4 {
-    margin-right: 1rem;
-    margin-left: 0;
-}
-
-.ltr .pl-4 {
-    padding-left: 1rem;
-    padding-right: 0;
-}
-
-.ltr .pr-4 {
-    padding-right: 1rem;
-    padding-left: 0;
-}
-
-/* Responsive adjustments */
+/* Mobile-specific styles */
 @media (max-width: 768px) {
-    .hero-gradient {
-        padding: 3rem 0;
-    }
-    
+    /* Adjust hero text for mobile */
     .hero-gradient h1 {
         font-size: 2rem;
+        line-height: 1.2;
     }
     
     .hero-gradient p {
         font-size: 1rem;
     }
     
-    .language-switcher {
-        top: 15px;
-        left: 15px;
+    /* Adjust service cards for mobile */
+    .card-hover {
+        margin-bottom: 1rem;
     }
     
-    .mobile-menu {
+    /* Mobile navigation adjustments */
+    .side-menu {
         width: 280px;
     }
     
-    .design-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+    /* Adjust spacing for mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     
-    .design-item {
-        padding: 1rem;
+    /* Mobile button adjustments */
+    .mobile-menu-btn {
+        top: 15px;
+        right: 15px;
+        padding: 10px;
     }
     
-    .design-icon {
-        font-size: 2rem;
-    }
-    
-    .design-title {
-        font-size: 1rem;
-    }
-    
-    .design-description {
-        font-size: 0.85rem;
+    /* Design cards responsive */
+    .design-card {
+        margin-bottom: 1rem;
     }
 }
 
-@media (max-width: 480px) {
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
     .hero-gradient h1 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     
-    .hero-gradient p {
-        font-size: 0.9rem;
-    }
-    
-    .language-switcher {
-        top: 10px;
-        left: 10px;
-    }
-    
-    .language-switcher button {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.875rem;
-    }
-    
-    .design-grid {
+    .grid.md\\:grid-cols-2 {
         grid-template-columns: 1fr;
-        gap: 0.75rem;
     }
-    
-    .design-item {
-        padding: 0.75rem;
-    }
-    
-    .design-icon {
-        font-size: 1.75rem;
-        margin-bottom: 0.75rem;
-    }
-    
-    .design-title {
-        font-size: 0.95rem;
-    }
-    
-    .design-description {
-        font-size: 0.8rem;
-    }
+}
+
+/* Arabic and Kurdish text spacing */
+.arabic-text p,
+.kurdish-text p {
+    line-height: 2.5; /* 20pt line spacing */
+    margin-bottom: 20px;
+}
+
+.arabic-text h1,
+.kurdish-text h1,
+.arabic-text h2,
+.kurdish-text h2,
+.arabic-text h3,
+.kurdish-text h3 {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Improve readability for RTL languages */
+.rtl {
+    text-align: right;
+}
+
+.rtl .text-left {
+    text-align: left !important;
+}
+
+.rtl .text-right {
+    text-align: right !important;
+}
+
+.rtl .text-center {
+    text-align: center !important;
+}
+
+/* Fix margin and padding for RTL */
+.rtl .mr-4 {
+    margin-left: 1rem !important;
+    margin-right: 0 !important;
+}
+
+.rtl .ml-4 {
+    margin-right: 1rem !important;
+    margin-left: 0 !important;
+}
+
+.rtl .pr-4 {
+    padding-left: 1rem !important;
+    padding-right: 0 !important;
+}
+
+.rtl .pl-4 {
+    padding-right: 1rem !important;
+    padding-left: 0 !important;
+}
+
+/* LTR styles for English */
+.ltr {
+    text-align: left;
+}
+
+.ltr .mr-4 {
+    margin-right: 1rem !important;
+    margin-left: 0 !important;
+}
+
+.ltr .ml-4 {
+    margin-left: 1rem !important;
+    margin-right: 0 !important;
+}
+
+.ltr .pr-4 {
+    padding-right: 1rem !important;
+    padding-left: 0 !important;
+}
+
+.ltr .pl-4 {
+    padding-left: 1rem !important;
+    padding-right: 0 !important;
+}
+
+/* Improve side menu transitions */
+.side-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+/* Better overlay animation */
+.side-menu-overlay {
+    backdrop-filter: blur(5px);
+}
+
+/* Mobile menu button improvements */
+.mobile-menu-btn {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Language option improvements */
+.language-option {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.language-option:hover {
+    border-color: var(--primary-color);
+    transform: translateX(-8px);
+}
+
+.language-option.active {
+    border-color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Top language switcher styles */
+.top-language-switcher {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.top-lang-btn {
+    padding: 6px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.top-lang-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.top-lang-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Featured Designs Section */
+.design-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.design-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.design-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.design-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.design-card p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.design-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.design-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Partners Section */
+.partner-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.partner-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 3px solid #e5e7eb;
+}
+
+/* Contact form styles */
+.contact-form {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact info styles */
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.contact-info-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.contact-info-content h4 {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-content p {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Map iframe responsive */
+iframe {
+    border-radius: 12px;
+}
+
+/* Footer improvements */
+footer {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+/* Instagram link styles */
+.instagram-link {
+    color: #e1306c;
+    transition: all 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: #c13584;
+    transform: scale(1.1);
 }
 
 /* Print styles */
 @media print {
-    .language-switcher,
-    .mobile-menu,
-    .mobile-menu-overlay,
-    .design-item {
+    .mobile-menu-btn,
+    .side-menu,
+    .side-menu-overlay,
+    .top-language-switcher {
         display: none !important;
     }
     
-    body {
-        font-size: 12pt;
-        line-height: 1.4;
-    }
-    
     .hero-gradient {
-        background: none !important;
+        background: white !important;
         color: black !important;
     }
 }
@@ -373,10 +535,18 @@ html {
     }
 }
 
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+.language-option:focus,
+.top-lang-btn:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-    .card-hover,
-    .design-item {
+    .card-hover {
         border: 2px solid #000;
     }
     
@@ -385,30 +555,74 @@ html {
     }
 }
 
-/* Dark mode support */
+/* Dark mode support (if needed in future) */
 @media (prefers-color-scheme: dark) {
-    .bg-white,
-    .design-item {
-        background-color: #1f2937;
+    .hero-gradient {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
     }
-    
-    .text-gray-900 {
-        color: #f9fafb;
+}
+
+/* Reveal animation styles */
+.card-hover, .partner-card, .contact-form, .design-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.card-hover.revealed, .partner-card.revealed, .contact-form.revealed, .design-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-group.focused .form-label {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Responsive adjustments for language switcher */
+@media (max-width: 1024px) {
+    .top-language-switcher {
+        display: none;
     }
-    
-    .text-gray-600 {
-        color: #d1d5db;
+}
+
+@media (min-width: 1025px) {
+    .mobile-menu-btn {
+        display: none;
     }
-    
-    .bg-gray-50 {
-        background-color: #111827;
+}
+
+/* Ensure proper spacing for partner cards */
+.partner-card {
+    margin-bottom: 1rem;
+}
+
+/* Improve form styling */
+.contact-form {
+    margin-bottom: 2rem;
+}
+
+/* Ensure proper RTL support for contact info */
+.rtl .contact-info-icon {
+    margin-right: 1rem;
+    margin-left: 0;
+}
+
+.ltr .contact-info-icon {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+/* Design cards grid responsive */
+@media (max-width: 1200px) {
+    .design-card {
+        margin-bottom: 1rem;
     }
-    
-    .design-title {
-        color: #f9fafb;
-    }
-    
-    .design-description {
-        color: #9ca3af;
+}
+
+/* Partners grid responsive */
+@media (max-width: 768px) {
+    .partner-card {
+        margin-bottom: 1rem;
     }
 }
