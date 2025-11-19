@@ -641,6 +641,15 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// -------------------------------------------
+// EMAILJS INTEGRATION START
+// -------------------------------------------
+
+// Initialize EmailJS
+(function() {
+    emailjs.init("-vgH1fSbISlSxwNXK"); 
+})();
+
 // Form submission handling
 function handleFormSubmission(formId) {
     const form = document.getElementById(formId);
@@ -648,15 +657,42 @@ function handleFormSubmission(formId) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message based on current language
-            const messages = {
-                ckb: 'سڵاو! پەیامەکەت نێردرا. ئەمە تەنها نموونەیە، پەیامەکەت نەنێردرا.',
-                ar: 'شكراً! تم إرسال رسالتك. هذا فقط مثال، لم يتم إرسال رسالتك الفعلية.',
-                en: 'Thank you! Your message has been sent. This is just an example, your actual message was not sent.'
-            };
+            const submitBtn = document.getElementById('contact-form-submit');
+            const originalBtnText = submitBtn.innerText;
             
-            alert(messages[currentLanguage]);
-            form.reset();
+            // Change button text to indicate loading
+            submitBtn.innerText = currentLanguage === 'en' ? 'Sending...' : '...جارێک';
+            submitBtn.disabled = true;
+
+            // Send email using EmailJS
+            emailjs.sendForm('service_bycz8ta', 'template_k79rb9k', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                    
+                    const messages = {
+                        ckb: 'سڵاو! پەیامەکەت بە سەرکەوتوویی نێردرا.',
+                        ar: 'شكراً! تم إرسال رسالتك بنجاح.',
+                        en: 'Thank you! Your message has been sent successfully.'
+                    };
+                    
+                    alert(messages[currentLanguage]);
+                    form.reset();
+                    
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    const errorMessages = {
+                        ckb: 'هەڵەیەک ڕوویدا، تکایە دواتر هەوڵ بدەرەوە.',
+                        ar: 'حدث خطأ، يرجى المحاولة لاحقاً.',
+                        en: 'An error occurred, please try again later.'
+                    };
+                    alert(errorMessages[currentLanguage]);
+                })
+                .finally(function() {
+                    // Reset button
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 }
@@ -665,6 +701,10 @@ function handleFormSubmission(formId) {
 document.addEventListener('DOMContentLoaded', function() {
     handleFormSubmission('contactForm');
 });
+
+// -------------------------------------------
+// EMAILJS INTEGRATION END
+// -------------------------------------------
 
 // Add loading animation for better UX
 function showLoading(element) {

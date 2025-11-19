@@ -15,12 +15,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #3b82f6;
+    background: #f63b3b;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #1d4ed8;
+    background: #d81d1d;
 }
 
 /* Loading animation */
@@ -29,7 +29,7 @@ html {
     width: 20px;
     height: 20px;
     border: 3px solid #f3f3f3;
-    border-top: 3px solid #3498db;
+    border-top: 3px solid #db3434;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -65,7 +65,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0), transparent);
     transition: left 0.5s;
 }
 
@@ -75,7 +75,7 @@ html {
 
 /* Button animations */
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ea6666 0%, #764ba2 100%);
     transition: all 0.3s ease;
 }
 
@@ -540,7 +540,7 @@ button:focus,
 a:focus,
 .language-option:focus,
 .top-lang-btn:focus {
-    outline: 2px solid #3b82f6;
+    outline: 2px solid #f63b3b;
     outline-offset: 2px;
 }
 
@@ -558,7 +558,7 @@ a:focus,
 /* Dark mode support (if needed in future) */
 @media (prefers-color-scheme: dark) {
     .hero-gradient {
-        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        background: linear-gradient(135deg, #8a1e1e 0%, #af1e1e 100%);
     }
 }
 
